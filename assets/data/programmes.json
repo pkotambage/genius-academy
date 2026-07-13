@@ -1,0 +1,57 @@
+[
+  {
+    "id": "GIQ-LR",
+    "branchId": "genius_iq",
+    "title": "Logical Reasoning",
+    "description": "Develop logical deduction, critical thinking, argument evaluation, causal reasoning and sound decision-making skills.",
+    "iconName": "psychology",
+    "colorValue": "0xFF1565C0",
+    "sortOrder": 1,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-AR",
+    "branchId": "genius_iq",
+    "title": "Analytical Reasoning",
+    "description": "Analyze arrangements, relationships, sequences, conditions and complex information using structured reasoning methods.",
+    "iconName": "analytics",
+    "colorValue": "0xFF00897B",
+    "sortOrder": 2,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-QA",
+    "branchId": "genius_iq",
+    "title": "Quantitative Aptitude",
+    "description": "Build numerical fluency and mathematical problem-solving skills for competitive examinations and practical situations.",
+    "iconName": "calculate",
+    "colorValue": "0xFFF57C00",
+    "sortOrder": 3,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-VR",
+    "branchId": "genius_iq",
+    "title": "Verbal Reasoning",
+    "description": "Strengthen vocabulary, comprehension, language analysis and the ability to reason accurately using written information.",
+    "iconName": "menu_book",
+    "colorValue": "0xFF7B1FA2",
+    "sortOrder": 4,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-NVR",
+    "branchId": "genius_iq",
+    "title": "Non-Verbal Reasoning",
+    "description": "Develop visual, spatial, abstract and pattern-recognition skills using figures, shapes and diagrams.",
+    "iconName": "grid_view",
+    "colorValue": "0xFF2E7D32",
+    "sortOrder": 5,
+    "isPremium": false,
+    "isActive": true
+  }
+]

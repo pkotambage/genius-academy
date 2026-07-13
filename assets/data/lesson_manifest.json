@@ -1,0 +1,6 @@
+{
+  "curriculumVersion": "1.0.0",
+  "lessonModules": [
+    "assets/data/lessons/logical_reasoning/statements_conclusions.json"
+  ]
+}

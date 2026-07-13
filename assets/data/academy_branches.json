@@ -1,0 +1,82 @@
+[
+  {
+    "id": "genius_iq",
+    "name": "Genius IQ",
+    "description": "Logic, mathematics, patterns, reasoning and aptitude training.",
+    "iconName": "iq",
+    "colorValue": "0xFF1565C0",
+    "isPremium": false,
+    "sortOrder": 1,
+    "isActive": true
+  },
+  {
+    "id": "genius_mum",
+    "name": "Genius Mum",
+    "description": "Pregnancy, baby care, parenting and child development learning.",
+    "iconName": "mum",
+    "colorValue": "0xFFE91E63",
+    "isPremium": true,
+    "sortOrder": 2,
+    "isActive": true
+  },
+  {
+    "id": "genius_pets",
+    "name": "Genius Pet Care",
+    "description": "Pet care, health, feeding, training and responsible ownership.",
+    "iconName": "pets",
+    "colorValue": "0xFF8E24AA",
+    "isPremium": true,
+    "sortOrder": 3,
+    "isActive": true
+  },
+  {
+    "id": "government_exams",
+    "name": "Government Exams",
+    "description": "Preparation for government recruitment and promotion examinations.",
+    "iconName": "government",
+    "colorValue": "0xFF455A64",
+    "isPremium": true,
+    "sortOrder": 4,
+    "isActive": true
+  },
+  {
+    "id": "school_learning",
+    "name": "School Learning",
+    "description": "Subject-based learning and exam preparation for school students.",
+    "iconName": "school",
+    "colorValue": "0xFFF57C00",
+    "isPremium": true,
+    "sortOrder": 5,
+    "isActive": true
+  },
+  {
+    "id": "english",
+    "name": "English",
+    "description": "Grammar, vocabulary, comprehension and communication skills.",
+    "iconName": "english",
+    "colorValue": "0xFF00897B",
+    "isPremium": true,
+    "sortOrder": 6,
+    "isActive": true
+  },
+  {
+    "id": "sinhala",
+    "name": "Sinhala",
+    "description": "Sinhala language, grammar, vocabulary and comprehension.",
+    "iconName": "sinhala",
+    "colorValue": "0xFF2E7D32",
+    "isPremium": true,
+    "sortOrder": 7,
+    "isActive": true
+  },
+  {
+    "id": "general_knowledge",
+    "name": "General Knowledge",
+    "description": "Sri Lanka, world affairs, science, history and current knowledge.",
+    "iconName": "general_knowledge",
+    "colorValue": "0xFF6D4C41",
+    "isPremium": true,
+    "sortOrder": 8,
+    "isActive": true
+  }
+]

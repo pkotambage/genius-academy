@@ -1,0 +1,79 @@
+[
+  {
+    "id": "GIQ-LR-01",
+    "programmeId": "GIQ-LR",
+    "title": "Statements & Conclusions",
+    "description": "Learn to understand statements, draw valid conclusions, distinguish certainty from possibility, and avoid unsupported assumptions.",
+    "iconName": "rule",
+    "colorValue": "0xFF1565C0",
+    "sortOrder": 1,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-02",
+    "programmeId": "GIQ-LR",
+    "title": "Assumptions",
+    "description": "Identify hidden, necessary and implicit assumptions underlying statements, arguments and decisions.",
+    "iconName": "visibility",
+    "colorValue": "0xFF1976D2",
+    "sortOrder": 2,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-03",
+    "programmeId": "GIQ-LR",
+    "title": "Arguments",
+    "description": "Evaluate arguments, distinguish strong reasoning from weak reasoning, and identify relevant and irrelevant support.",
+    "iconName": "forum",
+    "colorValue": "0xFF00897B",
+    "sortOrder": 3,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-04",
+    "programmeId": "GIQ-LR",
+    "title": "Cause & Effect",
+    "description": "Analyze causal relationships, distinguish causes from effects, and avoid confusing correlation with causation.",
+    "iconName": "account_tree",
+    "colorValue": "0xFF2E7D32",
+    "sortOrder": 4,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-05",
+    "programmeId": "GIQ-LR",
+    "title": "Course of Action",
+    "description": "Evaluate proposed actions and select practical, relevant and effective responses to stated problems.",
+    "iconName": "route",
+    "colorValue": "0xFFF57C00",
+    "sortOrder": 5,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-06",
+    "programmeId": "GIQ-LR",
+    "title": "Decision Making",
+    "description": "Choose the best alternative by applying rules, priorities, constraints and sound judgment.",
+    "iconName": "alt_route",
+    "colorValue": "0xFF7B1FA2",
+    "sortOrder": 6,
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-07",
+    "programmeId": "GIQ-LR",
+    "title": "Logical Puzzles",
+    "description": "Solve deduction, elimination and everyday logic problems using structured reasoning techniques.",
+    "iconName": "extension",
+    "colorValue": "0xFF5D4037",
+    "sortOrder": 7,
+    "isPremium": false,
+    "isActive": true
+  }
+]

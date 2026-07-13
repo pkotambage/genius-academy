@@ -20,15 +20,15 @@ class Question {
   });
 
   factory Question.fromJson(Map<String, dynamic> json) {
-  return Question(
-    id: json['id'].toString(),
-    category: json['category'].toString(),
-    question: json['question'].toString(),
-    options: json['options'].toString().split('|'),
-    correctAnswer: json['correctAnswer'].toString(),
-    explanation: json['explanation'].toString(),
-    difficulty: json['difficulty'].toString(),
-    isPremium: json['isPremium'].toString().toLowerCase() == 'true',
-  );
-}
+    return Question(
+      id: json['id'].toString(),
+      category: json['category'].toString(),
+      question: json['question'].toString(),
+      options: json['options'].toString().split('|'),
+      correctAnswer: json['correctAnswer'].toString(),
+      explanation: json['explanation'].toString(),
+      difficulty: json['difficulty'].toString(),
+      isPremium: json['isPremium'].toString().toLowerCase() == 'true',
+    );
+  }
 }

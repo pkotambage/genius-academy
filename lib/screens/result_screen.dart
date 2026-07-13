@@ -50,11 +50,7 @@ class ResultScreen extends StatelessWidget {
             CircleAvatar(
               radius: 52,
               backgroundColor: resultColor.withValues(alpha: 0.15),
-              child: Icon(
-                resultIcon,
-                size: 58,
-                color: resultColor,
-              ),
+              child: Icon(resultIcon, size: 58, color: resultColor),
             ),
 
             const SizedBox(height: 24),
@@ -62,10 +58,7 @@ class ResultScreen extends StatelessWidget {
             Text(
               '$category Quiz Completed',
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.w900,
-              ),
+              style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900),
             ),
 
             const SizedBox(height: 24),
@@ -87,10 +80,7 @@ class ResultScreen extends StatelessWidget {
                 children: [
                   const Text(
                     'Your Score',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -118,10 +108,7 @@ class ResultScreen extends StatelessWidget {
             Text(
               message,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
 
             const Spacer(),

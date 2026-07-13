@@ -1,0 +1,52 @@
+[
+  {
+    "id": "logic",
+    "name": "Logic",
+    "questionCategory": "Logic",
+    "iconName": "psychology",
+    "colorValue": "0xFF1565C0",
+    "isPremium": false,
+    "sortOrder": 1,
+    "isActive": true
+  },
+  {
+    "id": "math",
+    "name": "Math",
+    "questionCategory": "Math",
+    "iconName": "calculate",
+    "colorValue": "0xFFF57C00",
+    "isPremium": false,
+    "sortOrder": 2,
+    "isActive": true
+  },
+  {
+    "id": "patterns",
+    "name": "Patterns",
+    "questionCategory": "Patterns",
+    "iconName": "patterns",
+    "colorValue": "0xFF2E7D32",
+    "isPremium": true,
+    "sortOrder": 3,
+    "isActive": true
+  },
+  {
+    "id": "relationship_words",
+    "name": "Relationship Among Words",
+    "questionCategory": "Relationship Among Words",
+    "iconName": "relationship",
+    "colorValue": "0xFF8E24AA",
+    "isPremium": true,
+    "sortOrder": 4,
+    "isActive": true
+  },
+  {
+    "id": "mathematical_intelligence",
+    "name": "Mathematical Intelligence",
+    "questionCategory": "Mathematical Intelligence",
+    "iconName": "mathematical_intelligence",
+    "colorValue": "0xFF00897B",
+    "isPremium": true,
+    "sortOrder": 5,
+    "isActive": true
+  }
+]

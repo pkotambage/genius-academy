@@ -1,0 +1,148 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L01",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "What Is Logic?",
+    "summary": "Discover what logic means, why it matters, and how logical thinking helps us reach conclusions based on evidence rather than guesses.",
+    "difficulty": "Foundation",
+    "estimatedMinutes": 8,
+    "sortOrder": 1,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionCategory": null,
+    "learningObjectives": [
+      "Define logic in simple terms",
+      "Recognize the difference between reasoning and guessing",
+      "Identify the basic steps used in logical thinking",
+      "Explain why conclusions must be supported by information"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L01-B01",
+        "type": "heading",
+        "title": "What is logic?",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "Logic is a disciplined way of thinking. It helps us examine information, identify relationships and reach conclusions that are supported by the available facts.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B03",
+        "type": "keyPoint",
+        "title": "Key idea",
+        "content": "Logical thinking does not ask whether an answer merely sounds believable. It asks whether the answer is properly supported by the information given.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B04",
+        "type": "heading",
+        "title": "Reasoning is different from guessing",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B05",
+        "type": "paragraph",
+        "title": "",
+        "content": "A guess may be based on instinct, personal experience or incomplete information. A logical conclusion is reached by carefully examining the facts and applying a valid reasoning process.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B06",
+        "type": "example",
+        "title": "Example",
+        "content": "Statement: All mangoes in this basket are ripe. This fruit came from the basket. Conclusion: The fruit is ripe. The conclusion follows because it is supported by both pieces of information.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B07",
+        "type": "warning",
+        "title": "Do not add information",
+        "content": "You cannot conclude that the fruit is sweet, large or yellow. Those details were not provided, even though they may be true in real life.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B08",
+        "type": "heading",
+        "title": "A simple logical-thinking process",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B09",
+        "type": "numberedList",
+        "title": "",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9,
+        "items": [
+          "Read the information carefully.",
+          "Identify the facts that are given.",
+          "Determine what the question asks.",
+          "Avoid adding personal assumptions.",
+          "Choose the conclusion supported by the facts."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B10",
+        "type": "knowledgeCheck",
+        "title": "Think about it",
+        "content": "A conclusion appears sensible, but one important fact required to prove it is missing. Is the conclusion logically established? No. A sensible possibility is not necessarily a valid conclusion.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "Logic helps us reach conclusions through evidence and valid reasoning. We must use the information provided, distinguish reasoning from guessing and avoid adding unstated facts.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L01-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "Logic is disciplined and evidence-based thinking.",
+          "A valid conclusion must be supported by the given information.",
+          "A believable statement is not automatically a logical conclusion.",
+          "Never introduce facts or assumptions that the question does not provide."
+        ]
+      }
+    ]
+  }
+]

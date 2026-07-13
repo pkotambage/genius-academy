@@ -6,10 +6,7 @@ import 'result_screen.dart';
 class QuizScreen extends StatefulWidget {
   final String category;
 
-  const QuizScreen({
-    super.key,
-    required this.category,
-  });
+  const QuizScreen({super.key, required this.category});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -117,9 +114,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     if (questions.isEmpty) {
@@ -147,135 +142,131 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'Question ${currentQuestionIndex + 1} of ${questions.length}',
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            LinearProgressIndicator(
-              value: (currentQuestionIndex + 1) / questions.length,
-              minHeight: 8,
-              borderRadius: BorderRadius.circular(20),
-            ),
-
-            const SizedBox(height: 20),
-
-            Card(
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  currentQuestion.question,
-                  style: const TextStyle(
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                    height: 1.3,
-                  ),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Question ${currentQuestionIndex + 1} of ${questions.length}',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-            ),
 
-            const SizedBox(height: 18),
+              const SizedBox(height: 10),
 
-            ...List.generate(answers.length, (index) {
-              final icon = getAnswerIcon(index);
+              LinearProgressIndicator(
+                value: (currentQuestionIndex + 1) / questions.length,
+                minHeight: 8,
+                borderRadius: BorderRadius.circular(20),
+              ),
 
-              return Container(
-                margin: const EdgeInsets.only(bottom: 12),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: getAnswerColor(index),
-                    foregroundColor: Colors.black87,
-                    elevation: 1,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 14,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                  ),
-                  onPressed: () => selectAnswer(index),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          answers[index],
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      ),
-                      if (icon != null) Icon(icon),
-                    ],
-                  ),
-                ),
-              );
-            }),
+              const SizedBox(height: 20),
 
-            if (answered) ...[
-              const SizedBox(height: 8),
               Card(
-                color: Colors.orange.shade50,
+                elevation: 3,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(18),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(14),
+                  padding: const EdgeInsets.all(20),
                   child: Text(
-                    currentQuestion.explanation,
+                    currentQuestion.question,
                     style: const TextStyle(
-                      fontSize: 16,
-                      height: 1.4,
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                      height: 1.3,
                     ),
                   ),
+                ),
+              ),
+
+              const SizedBox(height: 18),
+
+              ...List.generate(answers.length, (index) {
+                final icon = getAnswerIcon(index);
+
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 12),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: getAnswerColor(index),
+                      foregroundColor: Colors.black87,
+                      elevation: 1,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 14,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    onPressed: () => selectAnswer(index),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            answers[index],
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        ),
+                        if (icon != null) Icon(icon),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+
+              if (answered) ...[
+                const SizedBox(height: 8),
+                Card(
+                  color: Colors.orange.shade50,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Text(
+                      currentQuestion.explanation,
+                      style: const TextStyle(fontSize: 16, height: 1.4),
+                    ),
+                  ),
+                ),
+              ],
+
+              Text(
+                'Score: $score',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+
+              const SizedBox(height: 14),
+
+              ElevatedButton(
+                onPressed: answered ? nextQuestion : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish Quiz'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 17),
                 ),
               ),
             ],
-
-            
-
-            Text(
-              'Score: $score',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-
-            const SizedBox(height: 14),
-
-            ElevatedButton(
-              onPressed: answered ? nextQuestion : null,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish Quiz'
-                    : 'Next Question',
-                style: const TextStyle(fontSize: 17),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),);
+    );
   }
 }
