@@ -1,47 +1,101 @@
 import 'package:flutter/material.dart';
+
 import '../models/question.dart';
-import '../services/question_service.dart';
+import '../models/question_set.dart';
+import '../repositories/question_repository.dart';
+import '../repositories/question_set_repository.dart';
+import '../widgets/question_explanation_video_button.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
-  final String category;
+  final String questionSetId;
 
-  const QuizScreen({super.key, required this.category});
+  const QuizScreen({super.key, required this.questionSetId});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  final QuestionRepository _questionRepository = QuestionRepository();
+
+  final QuestionSetRepository _questionSetRepository = QuestionSetRepository();
+
   int currentQuestionIndex = 0;
   int score = 0;
   int? selectedAnswerIndex;
+
   bool answered = false;
   bool isLoading = true;
 
+  String? loadError;
+
+  QuestionSet? questionSet;
   List<Question> questions = [];
 
   @override
   void initState() {
     super.initState();
-    loadQuestions();
+    _loadAssessment();
   }
 
-  Future<void> loadQuestions() async {
-    final allQuestions = await QuestionService().loadQuestions();
+  Future<void> _loadAssessment() async {
+    try {
+      final loadedQuestionSet = await _questionSetRepository.getQuestionSetById(
+        widget.questionSetId,
+      );
 
-    final filteredQuestions = allQuestions
-        .where((q) => q.category == widget.category)
-        .toList();
+      if (loadedQuestionSet == null) {
+        throw Exception('Question set not found: ${widget.questionSetId}');
+      }
 
-    setState(() {
-      questions = filteredQuestions;
-      isLoading = false;
-    });
+      var loadedQuestions = await _questionRepository.getQuestionsByIds(
+        loadedQuestionSet.questionIds,
+        includePremium: true,
+      );
+
+      if (loadedQuestionSet.shuffleQuestions) {
+        loadedQuestions.shuffle();
+      }
+
+      if (loadedQuestionSet.hasQuestionLimit &&
+          loadedQuestions.length > loadedQuestionSet.maximumQuestions!) {
+        loadedQuestions = loadedQuestions
+            .take(loadedQuestionSet.maximumQuestions!)
+            .toList();
+      }
+
+      if (!mounted) {
+        return;
+      }
+
+      setState(() {
+        questionSet = loadedQuestionSet;
+        questions = loadedQuestions;
+        isLoading = false;
+        loadError = null;
+      });
+    } catch (error) {
+      if (!mounted) {
+        return;
+      }
+
+      setState(() {
+        questions = [];
+        isLoading = false;
+        loadError = error.toString();
+      });
+    }
   }
 
-  void selectAnswer(int index) {
-    if (answered) return;
+  String get _quizTitle {
+    return questionSet?.title ?? 'Assessment';
+  }
+
+  void _selectAnswer(int index) {
+    if (answered) {
+      return;
+    }
 
     final currentQuestion = questions[currentQuestionIndex];
     final selectedAnswer = currentQuestion.options[index];
@@ -56,34 +110,38 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
-  void nextQuestion() {
+  void _nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answered = false;
       });
-    } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => ResultScreen(
-            score: score,
-            totalQuestions: questions.length,
-            category: widget.category,
-          ),
-        ),
-      );
+
+      return;
     }
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultScreen(
+          score: score,
+          totalQuestions: questions.length,
+          category: _quizTitle,
+        ),
+      ),
+    );
   }
 
-  Color getAnswerColor(int index) {
-    if (!answered) return Colors.white;
+  Color _answerColor(int index) {
+    if (!answered) {
+      return Colors.white;
+    }
 
-    final currentQuestion = questions[currentQuestionIndex];
-    final answer = currentQuestion.options[index];
+    final question = questions[currentQuestionIndex];
+    final answer = question.options[index];
 
-    if (answer == currentQuestion.correctAnswer) {
+    if (answer == question.correctAnswer) {
       return Colors.green.shade100;
     }
 
@@ -94,18 +152,20 @@ class _QuizScreenState extends State<QuizScreen> {
     return Colors.white;
   }
 
-  IconData? getAnswerIcon(int index) {
-    if (!answered) return null;
+  IconData? _answerIcon(int index) {
+    if (!answered) {
+      return null;
+    }
 
-    final currentQuestion = questions[currentQuestionIndex];
-    final answer = currentQuestion.options[index];
+    final question = questions[currentQuestionIndex];
+    final answer = question.options[index];
 
-    if (answer == currentQuestion.correctAnswer) {
-      return Icons.check_circle;
+    if (answer == question.correctAnswer) {
+      return Icons.check_circle_rounded;
     }
 
     if (index == selectedAnswerIndex) {
-      return Icons.cancel;
+      return Icons.cancel_rounded;
     }
 
     return null;
@@ -117,29 +177,49 @@ class _QuizScreenState extends State<QuizScreen> {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
-    if (questions.isEmpty) {
+    if (loadError != null) {
       return Scaffold(
-        appBar: AppBar(title: Text('${widget.category} Quiz')),
-        body: const Center(
-          child: Text(
-            'No questions found for this category.',
-            style: TextStyle(fontSize: 18),
+        appBar: AppBar(title: const Text('Assessment')),
+        body: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.error_outline_rounded,
+                  size: 56,
+                  color: Colors.red,
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Unable to load this assessment.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
+                ),
+                const SizedBox(height: 10),
+                Text(loadError!, textAlign: TextAlign.center),
+              ],
+            ),
           ),
         ),
       );
     }
 
+    if (questions.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(title: Text(_quizTitle)),
+        body: const Center(
+          child: Text('No questions were found for this assessment.'),
+        ),
+      );
+    }
+
     final currentQuestion = questions[currentQuestionIndex];
-    final answers = currentQuestion.options;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FB),
-      appBar: AppBar(
-        title: Text('${widget.category} Quiz'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-      ),
+      appBar: AppBar(title: Text(_quizTitle)),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
@@ -147,28 +227,21 @@ class _QuizScreenState extends State<QuizScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Question ${currentQuestionIndex + 1} of ${questions.length}',
+                'Question ${currentQuestionIndex + 1} '
+                'of ${questions.length}',
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-
               const SizedBox(height: 10),
-
               LinearProgressIndicator(
                 value: (currentQuestionIndex + 1) / questions.length,
                 minHeight: 8,
                 borderRadius: BorderRadius.circular(20),
               ),
-
               const SizedBox(height: 20),
-
               Card(
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18),
-                ),
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Text(
@@ -181,33 +254,27 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 18),
+              ...List.generate(currentQuestion.options.length, (index) {
+                final icon = _answerIcon(index);
 
-              ...List.generate(answers.length, (index) {
-                final icon = getAnswerIcon(index);
-
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 12),
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: getAnswerColor(index),
+                      backgroundColor: _answerColor(index),
                       foregroundColor: Colors.black87,
-                      elevation: 1,
                       padding: const EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 14,
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
                     ),
-                    onPressed: () => selectAnswer(index),
+                    onPressed: () => _selectAnswer(index),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            answers[index],
+                            currentQuestion.options[index],
                             style: const TextStyle(fontSize: 18),
                           ),
                         ),
@@ -217,24 +284,29 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 );
               }),
-
               if (answered) ...[
                 const SizedBox(height: 8),
-                Card(
-                  color: Colors.orange.shade50,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Text(
-                      currentQuestion.explanation,
-                      style: const TextStyle(fontSize: 16, height: 1.4),
+                if (currentQuestion.hasExplanation)
+                  Card(
+                    color: Colors.orange.shade50,
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Text(
+                        currentQuestion.explanation,
+                        style: const TextStyle(fontSize: 16, height: 1.4),
+                      ),
                     ),
                   ),
-                ),
+                if (currentQuestion.hasExplanationVideo) ...[
+                  const SizedBox(height: 10),
+                  QuestionExplanationVideoButton(
+                    videoUrl: currentQuestion.explanationVideoUrl!,
+                    videoTitle: currentQuestion.explanationVideoTitle,
+                    videoProvider: currentQuestion.explanationVideoProvider,
+                  ),
+                ],
               ],
-
+              const SizedBox(height: 14),
               Text(
                 'Score: $score',
                 textAlign: TextAlign.center,
@@ -243,24 +315,13 @@ class _QuizScreenState extends State<QuizScreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-
               const SizedBox(height: 14),
-
               ElevatedButton(
-                onPressed: answered ? nextQuestion : null,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                ),
+                onPressed: answered ? _nextQuestion : null,
                 child: Text(
                   currentQuestionIndex == questions.length - 1
                       ? 'Finish Quiz'
                       : 'Next Question',
-                  style: const TextStyle(fontSize: 17),
                 ),
               ),
             ],

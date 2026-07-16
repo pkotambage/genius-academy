@@ -5,73 +5,110 @@ import 'package:flutter/services.dart';
 import '../models/question.dart';
 
 class QuestionService {
-  static const String _questionsAssetPath =
-      'assets/questions/iq_questions.json';
+  static const String _manifestAssetPath =
+      'assets/data/assessment/manifests/question_manifest.json';
 
   Future<List<Question>> loadQuestions() async {
-    final String jsonString = await rootBundle.loadString(_questionsAssetPath);
+    final modulePaths = await _loadQuestionModulePaths();
+    final questionsById = <String, Question>{};
 
-    final dynamic decodedData = jsonDecode(jsonString);
+    for (final modulePath in modulePaths) {
+      final moduleQuestions = await _loadQuestionModule(modulePath);
 
-    if (decodedData is! List) {
+      for (final question in moduleQuestions) {
+        questionsById[question.id.trim().toLowerCase()] = question;
+      }
+    }
+
+    return questionsById.values.where((question) => question.isActive).toList();
+  }
+
+  Future<List<String>> _loadQuestionModulePaths() async {
+    final jsonString = await rootBundle.loadString(_manifestAssetPath);
+
+    final dynamic decoded = jsonDecode(jsonString);
+
+    if (decoded is! Map) {
       throw const FormatException(
-        'The questions JSON file must contain a list of questions.',
+        'Question manifest must contain a JSON object.',
       );
     }
 
-    return decodedData
-        .map(
-          (item) => Question.fromJson(Map<String, dynamic>.from(item as Map)),
-        )
+    final manifest = Map<String, dynamic>.from(decoded);
+    final modulesData = manifest['questionModules'];
+
+    if (modulesData is! List) {
+      throw const FormatException(
+        'Question manifest must contain a questionModules list.',
+      );
+    }
+
+    return modulesData
+        .map((item) => item.toString().trim())
+        .where((path) => path.isNotEmpty)
         .toList();
   }
 
-  Future<List<String>> loadCategories() async {
+  Future<List<Question>> _loadQuestionModule(String modulePath) async {
+    final jsonString = await rootBundle.loadString(modulePath);
+
+    final dynamic decoded = jsonDecode(jsonString);
+
+    if (decoded is! List) {
+      throw FormatException(
+        'Question module must contain a JSON list: '
+        '$modulePath',
+      );
+    }
+
+    return decoded
+        .whereType<Map>()
+        .map((item) => Question.fromJson(Map<String, dynamic>.from(item)))
+        .where((question) => question.isActive)
+        .toList();
+  }
+
+  Future<Question?> getQuestionById(String id) async {
     final questions = await loadQuestions();
+    final normalizedId = id.trim().toLowerCase();
 
-    final categories = questions
-        .map((question) => question.category.trim())
-        .where((category) => category.isNotEmpty)
-        .toSet()
-        .toList();
-
-    categories.sort();
-
-    return categories;
+    try {
+      return questions.firstWhere(
+        (question) => question.id.trim().toLowerCase() == normalizedId,
+      );
+    } catch (_) {
+      return null;
+    }
   }
 
-  Future<List<Question>> loadQuestionsByCategory(
-    String category, {
+  Future<List<Question>> loadQuestionsByIds(
+    List<String> questionIds, {
     bool includePremium = true,
   }) async {
     final questions = await loadQuestions();
 
-    return questions.where((question) {
-      final matchesCategory =
-          question.category.trim().toLowerCase() ==
-          category.trim().toLowerCase();
+    final questionMap = {
+      for (final question in questions)
+        question.id.trim().toLowerCase(): question,
+    };
 
-      final canAccessQuestion = includePremium || !question.isPremium;
+    final selectedQuestions = <Question>[];
 
-      return matchesCategory && canAccessQuestion;
-    }).toList();
-  }
+    for (final questionId in questionIds) {
+      final question = questionMap[questionId.trim().toLowerCase()];
 
-  Future<List<Question>> loadQuestionsByDifficulty(
-    String difficulty, {
-    bool includePremium = true,
-  }) async {
-    final questions = await loadQuestions();
+      if (question == null) {
+        continue;
+      }
 
-    return questions.where((question) {
-      final matchesDifficulty =
-          question.difficulty.trim().toLowerCase() ==
-          difficulty.trim().toLowerCase();
+      if (!includePremium && question.isPremium) {
+        continue;
+      }
 
-      final canAccessQuestion = includePremium || !question.isPremium;
+      selectedQuestions.add(question);
+    }
 
-      return matchesDifficulty && canAccessQuestion;
-    }).toList();
+    return selectedQuestions;
   }
 
   Future<List<Question>> loadFreeQuestions() async {

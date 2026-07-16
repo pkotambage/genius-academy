@@ -11,22 +11,16 @@ class QuestionRepository {
     return _questionService.loadQuestions();
   }
 
-  Future<List<Question>> getQuestionsByCategory(
-    String category, {
-    bool includePremium = true,
-  }) {
-    return _questionService.loadQuestionsByCategory(
-      category,
-      includePremium: includePremium,
-    );
+  Future<Question?> getQuestionById(String id) {
+    return _questionService.getQuestionById(id);
   }
 
-  Future<List<Question>> getQuestionsByDifficulty(
-    String difficulty, {
+  Future<List<Question>> getQuestionsByIds(
+    List<String> questionIds, {
     bool includePremium = true,
   }) {
-    return _questionService.loadQuestionsByDifficulty(
-      difficulty,
+    return _questionService.loadQuestionsByIds(
+      questionIds,
       includePremium: includePremium,
     );
   }

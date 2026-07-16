@@ -166,7 +166,7 @@ class Lesson {
 
   final String? thumbnailAsset;
   final String? videoUrl;
-  final String? questionCategory;
+  final String? questionSetId;
 
   final List<String> learningObjectives;
   final List<LessonContentBlock> contentBlocks;
@@ -188,11 +188,11 @@ class Lesson {
     required this.contentBlocks,
     this.thumbnailAsset,
     this.videoUrl,
-    this.questionCategory,
+    this.questionSetId,
   });
 
   bool get hasQuiz {
-    return questionCategory != null && questionCategory!.trim().isNotEmpty;
+    return questionSetId != null && questionSetId!.trim().isNotEmpty;
   }
 
   bool get hasVideo {
@@ -201,7 +201,6 @@ class Lesson {
 
   factory Lesson.fromJson(Map<String, dynamic> json) {
     final objectivesData = json['learningObjectives'];
-
     final contentData = json['contentBlocks'];
 
     final objectives = objectivesData is List
@@ -232,14 +231,14 @@ class Lesson {
       topicId: json['topicId']?.toString().trim() ?? '',
       title: json['title']?.toString().trim() ?? '',
       summary: json['summary']?.toString().trim() ?? '',
-      difficulty: json['difficulty']?.toString().trim() ?? 'Beginner',
+      difficulty: json['difficulty']?.toString().trim() ?? 'Foundation',
       estimatedMinutes: _parseInt(json['estimatedMinutes']),
       sortOrder: _parseInt(json['sortOrder']),
       isPremium: _parseBool(json['isPremium']),
       isActive: _parseBool(json['isActive'], defaultValue: true),
       thumbnailAsset: _parseNullableString(json['thumbnailAsset']),
       videoUrl: _parseNullableString(json['videoUrl']),
-      questionCategory: _parseNullableString(json['questionCategory']),
+      questionSetId: _parseNullableString(json['questionSetId']),
       learningObjectives: objectives,
       contentBlocks: contentBlocks,
     );

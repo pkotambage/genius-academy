@@ -101,9 +101,9 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   void _startQuiz() {
-    final questionCategory = lesson.questionCategory;
+    final questionSetId = lesson.questionSetId;
 
-    if (questionCategory == null || questionCategory.trim().isEmpty) {
+    if (questionSetId == null || questionSetId.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('No quiz is linked to this lesson yet.')),
       );
@@ -113,7 +113,9 @@ class _LessonScreenState extends State<LessonScreen> {
 
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => QuizScreen(category: questionCategory)),
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(questionSetId: questionSetId),
+      ),
     );
   }
 

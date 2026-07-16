@@ -14,7 +14,7 @@
     "isActive": true,
     "thumbnailAsset": null,
     "videoUrl": null,
-    "questionCategory": null,
+    "questionSetId": "GIQ-LR-01-T01-L01-QUIZ",
     "learningObjectives": [
       "Define logic in simple terms",
       "Recognize the difference between reasoning and guessing",
@@ -144,5 +144,299 @@
         ]
       }
     ]
-  }
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "Statements and Conclusions",
+    "summary": "Learn how statements provide information and how conclusions are tested against that information.",
+    "difficulty": "Foundation",
+    "estimatedMinutes": 9,
+    "sortOrder": 2,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L02-QUIZ",
+    "learningObjectives": [
+      "Explain what a statement is",
+      "Explain what a conclusion is",
+      "Distinguish statements from conclusions",
+      "Identify conclusions supported by given information"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L02-B01",
+        "type": "heading",
+        "title": "What is a statement?",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "A statement is information provided in a reasoning question. For the purpose of answering the question, the statement must be accepted as true.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B03",
+        "type": "example",
+        "title": "Example of a statement",
+        "content": "Statement: All teachers in this school wear identity cards. This is information given by the question. You must accept it while examining any conclusion.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B04",
+        "type": "warning",
+        "title": "Ignore outside knowledge",
+        "content": "Do not reject a statement because it differs from your experience. Logical reasoning questions must be answered using the information supplied in the question.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B05",
+        "type": "heading",
+        "title": "What is a conclusion?",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B06",
+        "type": "paragraph",
+        "title": "",
+        "content": "A conclusion is a result reached from the given statement or statements. A conclusion follows logically only when the information provided is sufficient to support it.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B07",
+        "type": "example",
+        "title": "Supported conclusion",
+        "content": "Statements: All roses are flowers. This plant is a rose. Conclusion: This plant is a flower. The conclusion follows because the two statements directly support it.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B08",
+        "type": "keyPoint",
+        "title": "The basic difference",
+        "content": "Statements give the information. Conclusions are the results that may be drawn from that information.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B09",
+        "type": "bulletList",
+        "title": "Statement and conclusion",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9,
+        "items": [
+          "A statement is given information.",
+          "A conclusion is a result of reasoning.",
+          "Statements are accepted as true for the question.",
+          "A conclusion must be supported by the statements.",
+          "A conclusion must not introduce unsupported information."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B10",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statements: All buses on Route 20 stop at Central Station. Bus A travels on Route 20. Conclusion: Bus A stops at Central Station. This conclusion follows because Bus A belongs to the group described in the first statement.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "A statement provides information that must be accepted for the purpose of the question. A conclusion is valid only when it follows from that information without assumptions or outside knowledge.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L02-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "Statements contain the given facts.",
+          "Conclusions are drawn from the given facts.",
+          "Accept the statements as true while answering.",
+          "Use only the supplied information.",
+          "Reject conclusions that require additional assumptions."
+        ]
+      }
+    ]
+  },
+  {
+  "id": "GIQ-LR-01-T01-L03",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "title": "How to Test a Conclusion",
+  "summary": "Learn a simple step-by-step method to determine whether a conclusion logically follows from the given statement without making assumptions.",
+  "difficulty": "Foundation",
+  "estimatedMinutes": 10,
+  "sortOrder": 3,
+  "isPremium": false,
+  "isActive": true,
+  "thumbnailAsset": null,
+  "videoUrl": null,
+  "questionSetId": "GIQ-LR-01-T01-L03-QUIZ",
+  "learningObjectives": [
+    "Understand how to test whether a conclusion follows.",
+    "Identify conclusions supported by the given statements.",
+    "Reject conclusions that require additional assumptions.",
+    "Apply a systematic method to solve Statements and Conclusions questions."
+  ],
+  "contentBlocks": [
+    {
+      "id": "GIQ-LR-01-T01-L03-B01",
+      "type": "heading",
+      "title": "Why do we test conclusions?",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 1
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B02",
+      "type": "paragraph",
+      "title": "",
+      "content": "A conclusion is accepted only when it is completely supported by the given statement or statements. Your task is not to decide whether the conclusion is true in real life, but whether it logically follows from the information provided.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 2
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B03",
+      "type": "heading",
+      "title": "Five-Step Method",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 3
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B04",
+      "type": "numberedList",
+      "title": "",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 4,
+      "items": [
+        "Read every statement carefully.",
+        "Identify the important facts.",
+        "Read the proposed conclusion.",
+        "Compare the conclusion with the given facts.",
+        "Decide whether the conclusion is completely supported."
+      ]
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B05",
+      "type": "example",
+      "title": "Example 1",
+      "content": "Statements: All lawyers are graduates. Amal is a lawyer. Conclusion: Amal is a graduate. This conclusion follows because every lawyer is included in the group of graduates.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 5
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B06",
+      "type": "example",
+      "title": "Example 2",
+      "content": "Statements: All roses are flowers. Some flowers are red. Conclusion: All roses are red. This conclusion does not follow because the statements never say that every rose is red.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 6
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B07",
+      "type": "keyPoint",
+      "title": "Golden Rule",
+      "content": "Ask yourself: 'Can I prove this conclusion using only the given statements?' If the answer is 'No', the conclusion does not follow.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 7
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B08",
+      "type": "warning",
+      "title": "Avoid Assumptions",
+      "content": "Do not use personal knowledge, experience, common sense or imagination. Use only the information given in the statements.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 8
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B09",
+      "type": "example",
+      "title": "Example 3",
+      "content": "Statement: Every employee received an identity card. Nimal is an employee. Conclusion A: Nimal received an identity card. This follows. Conclusion B: Nimal is a manager. This does not follow because the statement provides no information about his position.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 9
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B10",
+      "type": "knowledgeCheck",
+      "title": "Check Your Understanding",
+      "content": "Statements: All bicycles have two wheels. This vehicle is a bicycle. Which conclusion follows? (A) The vehicle has two wheels. (B) The vehicle is blue. Only conclusion A follows because it is directly supported by the statements.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 10
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B11",
+      "type": "summary",
+      "title": "Lesson Summary",
+      "content": "A conclusion follows only when it is fully supported by the given statements. If extra information is required to prove it, the conclusion does not logically follow.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 11
+    },
+    {
+      "id": "GIQ-LR-01-T01-L03-B12",
+      "type": "keyTakeaways",
+      "title": "Key Takeaways",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 12,
+      "items": [
+        "Read every statement carefully.",
+        "Use only the given information.",
+        "Reject conclusions requiring assumptions.",
+        "A believable conclusion is not always a logical conclusion.",
+        "Always test whether the conclusion is fully supported by the statements."
+      ]
+    }
+  ]
+}
 ]

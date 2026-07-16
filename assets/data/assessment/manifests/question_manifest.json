@@ -1,0 +1,6 @@
+{
+  "assessmentVersion": "1.0.0",
+  "questionModules": [
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions.json"
+  ]
+}

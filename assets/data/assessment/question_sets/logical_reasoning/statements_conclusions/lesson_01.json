@@ -1,0 +1,23 @@
+{
+  "id": "GIQ-LR-01-T01-L01-QUIZ",
+  "title": "What Is Logic? Quiz",
+  "description": "Check your understanding of logic, evidence and valid conclusions.",
+  "assessmentType": "lesson_quiz",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L01",
+  "questionIds": [
+    "GIQ-LR-01-T01-L01-Q001",
+    "GIQ-LR-01-T01-L01-Q002",
+    "GIQ-LR-01-T01-L01-Q003"
+  ],
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "maximumQuestions": null,
+  "timeLimitSeconds": null,
+  "passPercentage": 70,
+  "isPremium": false,
+  "isActive": true
+}

@@ -33,10 +33,12 @@ class _IqHomeScreenState extends State<IqHomeScreen> {
     );
   }
 
-  void _startQuiz(String category) {
+  void _startQuiz(String questionSetId) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => QuizScreen(category: category)),
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(questionSetId: questionSetId),
+      ),
     );
   }
 
@@ -46,7 +48,14 @@ class _IqHomeScreenState extends State<IqHomeScreen> {
       return;
     }
 
-    _startQuiz(category.questionCategory);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          '${category.name} assessment is being migrated '
+          'to the new Question Set engine.',
+        ),
+      ),
+    );
   }
 
   Future<void> _reloadCategories() async {
@@ -94,7 +103,9 @@ class _IqHomeScreenState extends State<IqHomeScreen> {
               ),
               const SizedBox(height: 16),
 
-              _ChallengeCard(onStart: () => _startQuiz('Logic')),
+              _ChallengeCard(
+                onStart: () => _startQuiz('GIQ-LR-01-T01-L01-QUIZ'),
+              ),
 
               const SizedBox(height: 20),
 

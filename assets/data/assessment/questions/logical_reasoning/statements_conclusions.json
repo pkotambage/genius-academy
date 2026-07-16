@@ -1,0 +1,824 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L01-Q001",
+    "category": "GIQ-LR-01-T01-L01-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L01",
+    "question": "Which option best describes logical reasoning?",
+    "options": [
+      "Choosing the answer that sounds familiar",
+      "Reaching conclusions using facts and valid reasoning",
+      "Accepting every statement as true",
+      "Using personal experience instead of the given information"
+    ],
+    "correctAnswer": "Reaching conclusions using facts and valid reasoning",
+    "explanation": "Logical reasoning means examining the available facts and reaching a conclusion that is properly supported by those facts.",
+    "explanationVideoUrl": "PASTE_YOUR_WORKING_VIDEO_URL_HERE",
+    "explanationVideoProvider": "YouTube",
+    "explanationVideoTitle": "Watch the Video Explanation",
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction",
+      "information_interpretation"
+    ],
+    "examTags": [
+      "general_aptitude"
+    ],
+    "sourceTitle": "Statements and Conclusions Tute",
+    "sourceReference": "Introduction to Logic",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L01-Q002",
+    "category": "GIQ-LR-01-T01-L01-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L01",
+    "question": "A conclusion sounds believable, but the given information does not fully support it. How should it be treated?",
+    "options": [
+      "As logically established",
+      "As automatically true",
+      "As unsupported by the given information",
+      "As correct because it sounds reasonable"
+    ],
+    "correctAnswer": "As unsupported by the given information",
+    "explanation": "A conclusion must be supported by the information supplied. Being believable or possible is not enough to establish it logically.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction",
+      "critical_thinking"
+    ],
+    "examTags": [
+      "general_aptitude"
+    ],
+    "sourceTitle": "Statements and Conclusions Tute",
+    "sourceReference": "Introduction to Logic",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L01-Q003",
+    "category": "GIQ-LR-01-T01-L01-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L01",
+    "question": "All books on this shelf are new. This dictionary is on the shelf. Which conclusion follows?",
+    "options": [
+      "The dictionary is expensive",
+      "The dictionary is new",
+      "The dictionary is large",
+      "The dictionary is difficult to read"
+    ],
+    "correctAnswer": "The dictionary is new",
+    "explanation": "The statement says that every book on the shelf is new. Since the dictionary is on that shelf, it follows that the dictionary is new.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction"
+    ],
+    "examTags": [
+      "general_aptitude"
+    ],
+    "sourceTitle": "Statements and Conclusions Tute",
+    "sourceReference": "Introduction to Logic",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q001",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "In a logical reasoning question, what is a statement?",
+    "options": [
+      "An opinion added by the learner",
+      "Information given in the question",
+      "The final answer selected by the learner",
+      "A fact taken from personal experience"
+    ],
+    "correctAnswer": "Information given in the question",
+    "explanation": "A statement is the information supplied in the question. It must be accepted for the purpose of evaluating the conclusions.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "statement_identification"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q002",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Which option best describes a conclusion?",
+    "options": [
+      "Information that must always appear first",
+      "A personal belief about the subject",
+      "A result drawn from the given information",
+      "An unrelated fact that may be true"
+    ],
+    "correctAnswer": "A result drawn from the given information",
+    "explanation": "A conclusion is a result reached by reasoning from the statement or statements provided.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "conclusion_identification"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "banking_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q003",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "How should a learner treat a statement given in a logical reasoning question?",
+    "options": [
+      "Accept it as true for the purpose of the question",
+      "Reject it if it seems unusual",
+      "Replace it with a real-life fact",
+      "Change it to match personal experience"
+    ],
+    "correctAnswer": "Accept it as true for the purpose of the question",
+    "explanation": "Logical reasoning questions require the learner to accept the supplied statements and reason only from them.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "information_interpretation"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "school_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q004",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statements: All doctors in this hospital wear identification cards. Nimal is a doctor in this hospital. Which conclusion follows?",
+    "options": [
+      "Nimal works at night",
+      "Nimal wears an identification card",
+      "Nimal is a senior doctor",
+      "Nimal treats every patient"
+    ],
+    "correctAnswer": "Nimal wears an identification card",
+    "explanation": "The first statement applies to every doctor in the hospital. Since Nimal is one of those doctors, he wears an identification card.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction",
+      "conclusion_identification"
+    ],
+    "examTags": [
+      "government_exams",
+      "banking_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q005",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statement: Every room on the first floor has a window. Room 12 is on the first floor. Which conclusion is supported?",
+    "options": [
+      "Room 12 has a window",
+      "Room 12 has two doors",
+      "Room 12 is air-conditioned",
+      "Room 12 is the largest room"
+    ],
+    "correctAnswer": "Room 12 has a window",
+    "explanation": "Every room on the first floor has a window, and Room 12 is on that floor. Therefore, Room 12 has a window.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "scholarship_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q006",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statement: All members of the school chess team attend weekly practice. Sahan is a member of the school chess team. Which option is a conclusion rather than a given statement?",
+    "options": [
+      "All members of the school chess team attend weekly practice",
+      "Sahan is a member of the school chess team",
+      "Sahan attends weekly practice",
+      "The school has a chess team"
+    ],
+    "correctAnswer": "Sahan attends weekly practice",
+    "explanation": "The first two options repeat information already given. Sahan attending weekly practice is the result drawn from those statements.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "statement_identification",
+      "conclusion_identification"
+    ],
+    "examTags": [
+      "school_exams",
+      "scholarship_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q007",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statements: All files in Cabinet A are confidential. This report is in Cabinet A. Which conclusion does not follow?",
+    "options": [
+      "The report is confidential",
+      "The report is in Cabinet A",
+      "The report was written yesterday",
+      "Cabinet A contains confidential files"
+    ],
+    "correctAnswer": "The report was written yesterday",
+    "explanation": "Nothing in the statements provides information about when the report was written. That conclusion adds an unsupported fact.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "unsupported_conclusion_detection",
+      "critical_thinking"
+    ],
+    "examTags": [
+      "government_exams",
+      "law_college"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q008",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statements: Every registered candidate receives an admission card. Kavindi is a registered candidate. Which conclusion follows?",
+    "options": [
+      "Kavindi will pass the examination",
+      "Kavindi receives an admission card",
+      "Kavindi registered first",
+      "Kavindi receives the highest marks"
+    ],
+    "correctAnswer": "Kavindi receives an admission card",
+    "explanation": "The rule applies to every registered candidate. Since Kavindi is registered, she receives an admission card.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "logical_deduction"
+    ],
+    "examTags": [
+      "government_exams",
+      "professional_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q009",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Which rule should be followed when deciding whether a conclusion is valid?",
+    "options": [
+      "Choose the conclusion that matches personal experience",
+      "Choose the conclusion that contains the most detail",
+      "Choose only a conclusion supported by the given statements",
+      "Choose any conclusion that could be true in real life"
+    ],
+    "correctAnswer": "Choose only a conclusion supported by the given statements",
+    "explanation": "A logical conclusion must be established by the supplied information. Personal experience and mere possibility are not sufficient.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "conclusion_evaluation"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "banking_exams"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L02-Q010",
+    "category": "GIQ-LR-01-T01-L02-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L02",
+    "question": "Statements: All red folders belong to the Accounts Division. Folder X is red. Which is the correct distinction between the statements and the conclusion?",
+    "options": [
+      "Folder X belongs to the Accounts Division is the conclusion",
+      "Folder X is red is the conclusion",
+      "All red folders belong to the Accounts Division is the conclusion",
+      "All three sentences are unrelated statements"
+    ],
+    "correctAnswer": "Folder X belongs to the Accounts Division is the conclusion",
+    "explanation": "The colour and the rule about red folders are given statements. Folder X belonging to the Accounts Division is derived from them, so it is the conclusion.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "statement_identification",
+      "conclusion_identification",
+      "logical_deduction"
+    ],
+    "examTags": [
+      "government_exams",
+      "banking_exams",
+      "general_aptitude"
+    ],
+    "sourceTitle": "Statements and Conclusions",
+    "sourceReference": "Statements and Conclusions - Lesson 2",
+    "isPremium": false,
+    "isActive": true
+  },
+
+  {
+  "id": "GIQ-LR-01-T01-L03-Q001",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "What is the best first step when testing whether a conclusion follows?",
+  "options": [
+    "Use your general knowledge",
+    "Read the statements carefully",
+    "Choose the longest conclusion",
+    "Imagine what may have happened"
+  ],
+  "correctAnswer": "Read the statements carefully",
+  "explanation": "The reasoning process begins by carefully reading and understanding the information supplied in the statements.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "conclusion_evaluation",
+    "information_interpretation"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "government_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q002",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Which question is most useful when testing a conclusion?",
+  "options": [
+    "Does the conclusion sound familiar?",
+    "Would this usually happen in real life?",
+    "Can the conclusion be proved using only the given statements?",
+    "Do most people agree with the conclusion?"
+  ],
+  "correctAnswer": "Can the conclusion be proved using only the given statements?",
+  "explanation": "A conclusion follows only when it can be established from the supplied statements without adding outside information.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "conclusion_evaluation",
+    "critical_thinking"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "banking_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q003",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: All accountants in the firm are graduates. Malith is an accountant in the firm. Which conclusion follows?",
+  "options": [
+    "Malith is a graduate",
+    "Malith is a manager",
+    "Malith has worked there for five years",
+    "Malith earns the highest salary"
+  ],
+  "correctAnswer": "Malith is a graduate",
+  "explanation": "The first statement applies to every accountant in the firm. Since Malith is one of those accountants, he must be a graduate.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "logical_deduction",
+    "conclusion_evaluation"
+  ],
+  "examTags": [
+    "government_exams",
+    "banking_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q004",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: All roses are flowers. Some flowers are yellow. Conclusion: All roses are yellow. How should this conclusion be treated?",
+  "options": [
+    "It follows completely",
+    "It follows because some flowers are yellow",
+    "It does not follow",
+    "It must be true in real life"
+  ],
+  "correctAnswer": "It does not follow",
+  "explanation": "The statements say only that some flowers are yellow. They do not establish that all roses are yellow.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "unsupported_conclusion_detection",
+    "conclusion_evaluation"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "school_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q005",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: Every employee in Department A received a security pass. Dilshan works in Department A. Which conclusion follows?",
+  "options": [
+    "Dilshan received a security pass",
+    "Dilshan is the department head",
+    "Dilshan joined the company recently",
+    "Dilshan works the night shift"
+  ],
+  "correctAnswer": "Dilshan received a security pass",
+  "explanation": "The rule applies to every employee in Department A. Since Dilshan works there, he received a security pass.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "logical_deduction"
+  ],
+  "examTags": [
+    "government_exams",
+    "professional_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q006",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "A conclusion requires one extra fact that is not stated in the question. What is the correct decision?",
+  "options": [
+    "Accept the conclusion because it may be true",
+    "Accept it if it sounds reasonable",
+    "Reject it because it requires an assumption",
+    "Accept it if most people would agree"
+  ],
+  "correctAnswer": "Reject it because it requires an assumption",
+  "explanation": "A conclusion must be supported completely by the given information. If an additional fact is needed, the conclusion does not logically follow.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "assumption_detection",
+    "critical_thinking"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "law_college"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q007",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: All registered vehicles have number plates. Vehicle P is registered. Which conclusion does not follow?",
+  "options": [
+    "Vehicle P has a number plate",
+    "Vehicle P is registered",
+    "Vehicle P is expensive",
+    "Registered vehicles have number plates"
+  ],
+  "correctAnswer": "Vehicle P is expensive",
+  "explanation": "The statements provide no information about the value or price of Vehicle P.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "unsupported_conclusion_detection",
+    "information_interpretation"
+  ],
+  "examTags": [
+    "government_exams",
+    "general_aptitude"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q008",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: Every applicant who completed the form received a reference number. Ayesha completed the form. Which conclusion follows?",
+  "options": [
+    "Ayesha received a reference number",
+    "Ayesha was selected",
+    "Ayesha submitted the form first",
+    "Ayesha received an appointment"
+  ],
+  "correctAnswer": "Ayesha received a reference number",
+  "explanation": "The statement guarantees a reference number to every applicant who completed the form. Ayesha completed it, so the conclusion follows.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "logical_deduction",
+    "conclusion_evaluation"
+  ],
+  "examTags": [
+    "government_exams",
+    "banking_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q009",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Statements: No temporary employee may approve payments. Kamal is a temporary employee. Which conclusion follows?",
+  "options": [
+    "Kamal may approve small payments",
+    "Kamal may not approve payments",
+    "Kamal works in the Accounts Division",
+    "Kamal is a permanent employee"
+  ],
+  "correctAnswer": "Kamal may not approve payments",
+  "explanation": "The statement excludes every temporary employee from approving payments. Since Kamal is temporary, he may not approve them.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "negative_statement_reasoning",
+    "logical_deduction"
+  ],
+  "examTags": [
+    "banking_exams",
+    "professional_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L03-Q010",
+  "category": "GIQ-LR-01-T01-L03-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L03",
+  "question": "Which conclusion-testing method is correct?",
+  "options": [
+    "Accept conclusions that are probably true",
+    "Add missing facts when necessary",
+    "Compare the conclusion directly with the supplied statements",
+    "Use personal experience to fill gaps"
+  ],
+  "correctAnswer": "Compare the conclusion directly with the supplied statements",
+  "explanation": "A conclusion must be tested directly against the given statements. Missing facts must not be supplied through assumptions or personal experience.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "conclusion_evaluation",
+    "critical_thinking"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "government_exams",
+    "banking_exams"
+  ],
+  "sourceTitle": "Statements and Conclusions",
+  "sourceReference": "How to Test a Conclusion - Lesson 3",
+  "isPremium": false,
+  "isActive": true
+}
+
+]
