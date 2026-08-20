@@ -819,6 +819,366 @@
   "sourceReference": "How to Test a Conclusion - Lesson 3",
   "isPremium": false,
   "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q001",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: All university lecturers have postgraduate qualifications. Dr. Perera is a university lecturer. Which conclusion definitely follows?",
+  "options": [
+    "Dr. Perera has postgraduate qualifications.",
+    "Dr. Perera teaches Mathematics.",
+    "Dr. Perera has a PhD.",
+    "Dr. Perera is the senior lecturer."
+  ],
+  "correctAnswer": "Dr. Perera has postgraduate qualifications.",
+  "explanation": "Every university lecturer has postgraduate qualifications. Since Dr. Perera is a university lecturer, this conclusion must be true.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "definite_conclusion",
+    "logical_deduction"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "government_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q002",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statement: Some employees work from home. Which conclusion definitely follows?",
+  "options": [
+    "Every employee works from home.",
+    "At least one employee works from home.",
+    "No employee works from home.",
+    "Every employee prefers working from home."
+  ],
+  "correctAnswer": "At least one employee works from home.",
+  "explanation": "The word 'some' guarantees that one or more employees work from home. It does not mean all employees do.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "possible_vs_definite",
+    "statement_analysis"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "banking_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q003",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: Every passport applicant must submit a photograph. Nimali submitted a passport application. Which conclusion definitely follows?",
+  "options": [
+    "Nimali submitted a photograph.",
+    "Nimali received her passport.",
+    "Nimali submitted two photographs.",
+    "Nimali applied online."
+  ],
+  "correctAnswer": "Nimali submitted a photograph.",
+  "explanation": "Every passport applicant must submit a photograph. Since Nimali submitted an application, she must have submitted a photograph.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "definite_conclusion",
+    "logical_deduction"
+  ],
+  "examTags": [
+    "government_exams",
+    "general_aptitude"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q004",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: All registered voters received polling cards. Sunil received a polling card. Which conclusion definitely follows?",
+  "options": [
+    "Sunil is a registered voter.",
+    "Sunil voted.",
+    "Sunil is over 60 years old.",
+    "None of the above."
+  ],
+  "correctAnswer": "None of the above.",
+  "explanation": "The statements do not say that only registered voters received polling cards. Therefore, none of the proposed conclusions can be established with certainty.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "unsupported_conclusion_detection",
+    "assumption_detection"
+  ],
+  "examTags": [
+    "government_exams",
+    "law_college"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q005",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: No temporary staff may access the secure server. Kasun is temporary staff. Which conclusion definitely follows?",
+  "options": [
+    "Kasun may access the secure server.",
+    "Kasun may not access the secure server.",
+    "Kasun works in the IT Department.",
+    "Kasun resigned yesterday."
+  ],
+  "correctAnswer": "Kasun may not access the secure server.",
+  "explanation": "The statement clearly says that no temporary staff may access the secure server. Since Kasun is temporary staff, he may not access it.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "negative_statement_reasoning",
+    "definite_conclusion"
+  ],
+  "examTags": [
+    "government_exams",
+    "professional_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q006",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statement: Some books in the library are reference books. Which conclusion definitely follows?",
+  "options": [
+    "Every book is a reference book.",
+    "Some books are reference books.",
+    "No books are reference books.",
+    "Only new books are reference books."
+  ],
+  "correctAnswer": "Some books are reference books.",
+  "explanation": "The statement itself establishes that some books are reference books. No conclusion about every book or only new books can be drawn.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "possible_vs_definite",
+    "statement_analysis"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "scholarship_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q007",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: Every candidate who passed the written examination was invited for the interview. Sanduni was invited for the interview. Which conclusion definitely follows?",
+  "options": [
+    "Sanduni passed the written examination.",
+    "Sanduni attended the interview.",
+    "Sanduni submitted an application.",
+    "None of the above."
+  ],
+  "correctAnswer": "None of the above.",
+  "explanation": "The statements do not say that only successful written candidates were invited. Therefore none of the proposed conclusions can be established with certainty.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "assumption_detection",
+    "unsupported_conclusion_detection"
+  ],
+  "examTags": [
+    "government_exams",
+    "professional_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q008",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: All approved loans require identity verification. Loan X was approved. Which conclusion definitely follows?",
+  "options": [
+    "Identity verification was completed for Loan X.",
+    "Loan X was approved today.",
+    "Loan X has already been repaid.",
+    "Loan X is the largest loan."
+  ],
+  "correctAnswer": "Identity verification was completed for Loan X.",
+  "explanation": "Identity verification is a stated requirement for every approved loan. No other information is provided.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "definite_conclusion",
+    "logical_deduction"
+  ],
+  "examTags": [
+    "banking_exams",
+    "general_aptitude"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q009",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Statements: Every firefighter receives safety training. Nuwan is a firefighter. Which conclusion definitely follows?",
+  "options": [
+    "Nuwan received safety training.",
+    "Nuwan drives a fire engine.",
+    "Nuwan has twenty years of experience.",
+    "Nuwan works the night shift."
+  ],
+  "correctAnswer": "Nuwan received safety training.",
+  "explanation": "The rule applies to every firefighter. Since Nuwan is a firefighter, he must have received safety training.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "logical_deduction",
+    "definite_conclusion"
+  ],
+  "examTags": [
+    "government_exams",
+    "general_aptitude"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
+},
+{
+  "id": "GIQ-LR-01-T01-L04-Q010",
+  "category": "GIQ-LR-01-T01-L04-QUIZ",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": "GIQ-LR-01-T01-L04",
+  "question": "Which statement best describes a definite conclusion?",
+  "options": [
+    "It sounds reasonable.",
+    "It may be true.",
+    "It must be true according to the given statements.",
+    "It is supported by personal knowledge."
+  ],
+  "correctAnswer": "It must be true according to the given statements.",
+  "explanation": "A definite conclusion is one that is fully established by the given statements without requiring assumptions or outside knowledge.",
+  "explanationVideoUrl": null,
+  "explanationVideoProvider": null,
+  "explanationVideoTitle": null,
+  "questionImageUrl": null,
+  "explanationImageUrl": null,
+  "difficulty": "Foundation",
+  "competencyIds": [
+    "definite_conclusion",
+    "critical_thinking"
+  ],
+  "examTags": [
+    "general_aptitude",
+    "government_exams",
+    "banking_exams"
+  ],
+  "sourceTitle": "Definite vs Possible Conclusions",
+  "sourceReference": "Lesson 4",
+  "isPremium": false,
+  "isActive": true
 }
-
 ]

@@ -438,5 +438,145 @@
       ]
     }
   ]
-}
+  },
+  {
+  "id": "GIQ-LR-01-T01-L04",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "title": "Definite and Possible Conclusions",
+  "summary": "Learn the difference between conclusions that must be true and conclusions that may only be possible.",
+  "difficulty": "Foundation",
+  "estimatedMinutes": 10,
+  "sortOrder": 4,
+  "isPremium": false,
+  "isActive": true,
+  "thumbnailAsset": null,
+  "videoUrl": null,
+  "questionSetId": "GIQ-LR-01-T01-L04-QUIZ",
+  "learningObjectives": [
+    "Understand what a definite conclusion means",
+    "Understand what a possible conclusion means",
+    "Distinguish certainty from possibility",
+    "Reject conclusions that are possible but not logically established"
+  ],
+  "contentBlocks": [
+    {
+      "id": "GIQ-LR-01-T01-L04-B01",
+      "type": "heading",
+      "title": "What is a definite conclusion?",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 1
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B02",
+      "type": "paragraph",
+      "title": "",
+      "content": "A definite conclusion is a conclusion that must be true if the given statements are accepted as true. The statements provide enough information to establish the conclusion without doubt.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 2
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B03",
+      "type": "example",
+      "title": "Definite conclusion",
+      "content": "Statements: All officers in this unit wear uniforms. Malini is an officer in this unit. Conclusion: Malini wears a uniform. This is definite because the rule applies to every officer in the unit.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 3
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B04",
+      "type": "heading",
+      "title": "What is a possible conclusion?",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 4
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B05",
+      "type": "paragraph",
+      "title": "",
+      "content": "A possible conclusion may be true, but the given statements do not prove that it must be true. Logical reasoning questions usually require definite conclusions, not conclusions that are merely possible.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 5
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B06",
+      "type": "example",
+      "title": "Possible but not definite",
+      "content": "Statement: Some students in the class play cricket. Conclusion: Nimal plays cricket. This may be possible, but it is not definite because the statement does not identify Nimal as one of those students.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 6
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B07",
+      "type": "keyPoint",
+      "title": "The certainty test",
+      "content": "Ask whether the conclusion must be true or whether it may only be true. If another situation is possible under the same statements, the conclusion is not definite.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 7
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B08",
+      "type": "warning",
+      "title": "Do not confuse possibility with proof",
+      "content": "A conclusion does not follow merely because it sounds reasonable or could happen. It must be established by the given information.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 8
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B09",
+      "type": "example",
+      "title": "Compare the two",
+      "content": "Statements: Every registered applicant received a number. Ravi is a registered applicant. Conclusion A: Ravi received a number. This is definite. Conclusion B: Ravi submitted the application yesterday. This is only possible because no date is given.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 9
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B10",
+      "type": "knowledgeCheck",
+      "title": "Check your understanding",
+      "content": "Statement: Some employees work from home. Conclusion: Every employee works from home. Does it follow? No. The statement refers only to some employees, so the conclusion about every employee is not definite.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 10
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B11",
+      "type": "summary",
+      "title": "Lesson summary",
+      "content": "A definite conclusion must be true according to the statements. A possible conclusion may be true, but the statements do not establish it. In logical reasoning, choose only conclusions that are definitely supported.",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 11
+    },
+    {
+      "id": "GIQ-LR-01-T01-L04-B12",
+      "type": "keyTakeaways",
+      "title": "Key takeaways",
+      "content": "",
+      "mediaUrl": null,
+      "caption": null,
+      "sortOrder": 12,
+      "items": [
+        "A definite conclusion must be true.",
+        "A possible conclusion may be true but is not proved.",
+        "Logical conclusions require certainty, not possibility.",
+        "Words such as all, every, some and no must be read carefully.",
+        "Reject conclusions that go beyond the information given."
+      ]
+    }
+  ]
+  }
 ]
