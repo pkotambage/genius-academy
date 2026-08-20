@@ -2,7 +2,7 @@
   {
     "id": "genius_iq",
     "name": "Genius IQ",
-    "description": "Logic, mathematics, patterns, reasoning and aptitude training.",
+    "description": "Logic, reasoning and aptitude training with daily challenges and structured learning.",
     "iconName": "iq",
     "colorValue": "0xFF1565C0",
     "isPremium": false,
@@ -17,7 +17,7 @@
     "colorValue": "0xFFE91E63",
     "isPremium": true,
     "sortOrder": 2,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "genius_pets",
@@ -27,7 +27,7 @@
     "colorValue": "0xFF8E24AA",
     "isPremium": true,
     "sortOrder": 3,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "government_exams",
@@ -37,7 +37,7 @@
     "colorValue": "0xFF455A64",
     "isPremium": true,
     "sortOrder": 4,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "school_learning",
@@ -47,7 +47,7 @@
     "colorValue": "0xFFF57C00",
     "isPremium": true,
     "sortOrder": 5,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "english",
@@ -57,7 +57,7 @@
     "colorValue": "0xFF00897B",
     "isPremium": true,
     "sortOrder": 6,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "sinhala",
@@ -67,7 +67,7 @@
     "colorValue": "0xFF2E7D32",
     "isPremium": true,
     "sortOrder": 7,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "general_knowledge",
@@ -77,6 +77,6 @@
     "colorValue": "0xFF6D4C41",
     "isPremium": true,
     "sortOrder": 8,
-    "isActive": true
+    "isActive": false
   }
 ]

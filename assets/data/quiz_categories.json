@@ -7,7 +7,7 @@
     "colorValue": "0xFF1565C0",
     "isPremium": false,
     "sortOrder": 1,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "math",
@@ -17,7 +17,7 @@
     "colorValue": "0xFFF57C00",
     "isPremium": false,
     "sortOrder": 2,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "patterns",
@@ -27,7 +27,7 @@
     "colorValue": "0xFF2E7D32",
     "isPremium": true,
     "sortOrder": 3,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "relationship_words",
@@ -37,7 +37,7 @@
     "colorValue": "0xFF8E24AA",
     "isPremium": true,
     "sortOrder": 4,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "mathematical_intelligence",
@@ -47,6 +47,6 @@
     "colorValue": "0xFF00897B",
     "isPremium": true,
     "sortOrder": 5,
-    "isActive": true
+    "isActive": false
   }
 ]
