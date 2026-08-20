@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../models/academy_branch.dart';
+import '../models/daily_challenge_progress.dart';
 import '../repositories/academy_branch_repository.dart';
+import '../repositories/daily_challenge_progress_repository.dart';
+import '../repositories/daily_challenge_repository.dart';
 import 'iq_home_screen.dart';
 import 'premium_screen.dart';
-
 import 'programme_list_screen.dart';
+import 'quiz_screen.dart';
 
 class AcademyBranchScreen extends StatefulWidget {
   const AcademyBranchScreen({super.key});
@@ -15,14 +18,32 @@ class AcademyBranchScreen extends StatefulWidget {
 }
 
 class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
-  final AcademyBranchRepository _branchRepository = AcademyBranchRepository();
+  final AcademyBranchRepository _branchRepository =
+      AcademyBranchRepository();
+
+  final DailyChallengeRepository _dailyChallengeRepository =
+      DailyChallengeRepository();
+
+  final DailyChallengeProgressRepository
+  _dailyChallengeProgressRepository =
+      DailyChallengeProgressRepository();
 
   late Future<List<AcademyBranch>> _branchesFuture;
+
+  DailyChallengeProgress? _todayProgress;
+
+  int _streakCount = 0;
+
+  bool _isOpeningDailyChallenge = false;
+  bool _isLoadingProgress = true;
 
   @override
   void initState() {
     super.initState();
+
     _branchesFuture = _branchRepository.getBranches();
+
+    _loadDailyChallengeProgress();
   }
 
   Future<void> _reloadBranches() async {
@@ -31,6 +52,26 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
     });
 
     await _branchesFuture;
+
+    await _loadDailyChallengeProgress();
+  }
+
+  Future<void> _loadDailyChallengeProgress() async {
+    final todayProgress =
+        await _dailyChallengeProgressRepository.getTodayProgress();
+
+    final streak =
+        await _dailyChallengeProgressRepository.getCurrentStreak();
+
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _todayProgress = todayProgress;
+      _streakCount = streak;
+      _isLoadingProgress = false;
+    });
   }
 
   void _openBranch(AcademyBranch branch) {
@@ -50,27 +91,94 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
     if (branch.isPremium) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => const PremiumScreen()),
+        MaterialPageRoute(
+          builder: (_) => const PremiumScreen(),
+        ),
       );
       return;
     }
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('${branch.name} is coming soon.')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${branch.name} is coming soon.'),
+      ),
+    );
   }
 
-  void _openDailyChallenge() {
+  Future<void> _openDailyChallenge() async {
+    if (_isOpeningDailyChallenge) {
+      return;
+    }
+
+    setState(() {
+      _isOpeningDailyChallenge = true;
+    });
+
+    try {
+      final challenge =
+          await _dailyChallengeRepository.getTodayChallenge();
+
+      if (!mounted) {
+        return;
+      }
+
+      if (challenge == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Today\'s Daily Challenge is not available yet.',
+            ),
+          ),
+        );
+        return;
+      }
+
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => QuizScreen(
+            questionSetId: challenge.questionSetId,
+          ),
+        ),
+      );
+
+      await _loadDailyChallengeProgress();
+    } catch (error) {
+      if (!mounted) {
+        return;
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Unable to load today\'s Daily Challenge. $error',
+          ),
+        ),
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isOpeningDailyChallenge = false;
+        });
+      }
+    }
+  }
+
+  void _openGeniusIq() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => const IqHomeScreen()),
+      MaterialPageRoute(
+        builder: (_) => const IqHomeScreen(),
+      ),
     );
   }
 
   void _openPremium() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => const PremiumScreen()),
+      MaterialPageRoute(
+        builder: (_) => const PremiumScreen(),
+      ),
     );
   }
 
@@ -82,13 +190,17 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
       appBar: AppBar(
         title: const Text(
           'Genius Academy',
-          style: TextStyle(fontWeight: FontWeight.w800),
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+          ),
         ),
         actions: [
           IconButton(
             tooltip: 'Premium',
             onPressed: _openPremium,
-            icon: const Icon(Icons.workspace_premium_outlined),
+            icon: const Icon(
+              Icons.workspace_premium_outlined,
+            ),
           ),
         ],
       ),
@@ -96,34 +208,54 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
         onRefresh: _reloadBranches,
         child: ListView(
           physics: const AlwaysScrollableScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
+          padding: const EdgeInsets.fromLTRB(
+            16,
+            16,
+            16,
+            28,
+          ),
           children: [
-            _WelcomeBanner(onStart: _openDailyChallenge),
+            _WelcomeBanner(
+              onStart: _openDailyChallenge,
+              isLoading: _isOpeningDailyChallenge,
+              progress: _todayProgress,
+            ),
+
             const SizedBox(height: 24),
 
             _SectionHeader(
               title: 'Explore Genius Academy',
-              subtitle: 'Choose the learning path that matches your goals.',
+              subtitle:
+                  'Choose the learning path that matches your goals.',
               actionLabel: 'Premium',
               onAction: _openPremium,
             ),
+
             const SizedBox(height: 14),
 
             FutureBuilder<List<AcademyBranch>>(
               future: _branchesFuture,
               builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
+                if (snapshot.connectionState ==
+                    ConnectionState.waiting) {
                   return const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 56),
-                    child: Center(child: CircularProgressIndicator()),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 56,
+                    ),
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
                   );
                 }
 
                 if (snapshot.hasError) {
-                  return _BranchErrorCard(onRetry: _reloadBranches);
+                  return _BranchErrorCard(
+                    onRetry: _reloadBranches,
+                  );
                 }
 
-                final branches = snapshot.data ?? <AcademyBranch>[];
+                final branches =
+                    snapshot.data ?? <AcademyBranch>[];
 
                 if (branches.isEmpty) {
                   return const _EmptyBranchCard();
@@ -131,24 +263,34 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 
                 return LayoutBuilder(
                   builder: (context, constraints) {
-                    final isWide = constraints.maxWidth >= 760;
+                    final isWide =
+                        constraints.maxWidth >= 760;
 
                     return GridView.builder(
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
+                      physics:
+                          const NeverScrollableScrollPhysics(),
                       itemCount: branches.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: isWide ? 4 : 2,
-                        crossAxisSpacing: 12,
-                        mainAxisSpacing: 12,
-                        childAspectRatio: isWide ? 0.98 : 0.86,
-                      ),
-                      itemBuilder: (context, index) {
-                        final branch = branches[index];
+                      gridDelegate:
+                          SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount:
+                                isWide ? 4 : 2,
+                            crossAxisSpacing: 12,
+                            mainAxisSpacing: 12,
+                            childAspectRatio:
+                                isWide ? 0.98 : 0.86,
+                          ),
+                      itemBuilder: (
+                        context,
+                        index,
+                      ) {
+                        final branch =
+                            branches[index];
 
                         return _AcademyBranchCard(
                           branch: branch,
-                          onTap: () => _openBranch(branch),
+                          onTap: () =>
+                              _openBranch(branch),
                         );
                       },
                     );
@@ -161,25 +303,40 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 
             const _SectionHeader(
               title: 'Your Learning Journey',
-              subtitle: 'Build consistency and keep improving every day.',
+              subtitle:
+                  'Build consistency and keep improving every day.',
             ),
+
             const SizedBox(height: 14),
 
-            const Row(
+            Row(
               children: [
                 Expanded(
                   child: _ProgressCard(
-                    icon: Icons.local_fire_department_outlined,
-                    title: '0 Days',
+                    icon: Icons
+                        .local_fire_department_outlined,
+                    title: _isLoadingProgress
+                        ? '...'
+                        : '$_streakCount Days',
                     subtitle: 'Current streak',
                   ),
                 ),
-                SizedBox(width: 12),
+
+                const SizedBox(width: 12),
+
                 Expanded(
                   child: _ProgressCard(
-                    icon: Icons.emoji_events_outlined,
-                    title: '0',
-                    subtitle: 'Achievements',
+                    icon:
+                        Icons.check_circle_outline_rounded,
+                    title: _isLoadingProgress
+                        ? '...'
+                        : _todayProgress == null
+                        ? 'Not Yet'
+                        : '${_todayProgress!.score}/${_todayProgress!.totalQuestions}',
+                    subtitle:
+                        _todayProgress == null
+                        ? 'Today\'s challenge'
+                        : 'Today completed',
                   ),
                 ),
               ],
@@ -187,11 +344,15 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 
             const SizedBox(height: 12),
 
-            _ContinueLearningCard(onTap: _openDailyChallenge),
+            _ContinueLearningCard(
+              onTap: _openGeniusIq,
+            ),
 
             const SizedBox(height: 24),
 
-            _PremiumBanner(onTap: _openPremium),
+            _PremiumBanner(
+              onTap: _openPremium,
+            ),
           ],
         ),
       ),
@@ -201,43 +362,68 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 }
 
 class _WelcomeBanner extends StatelessWidget {
-  final VoidCallback onStart;
+  final Future<void> Function() onStart;
+  final bool isLoading;
+  final DailyChallengeProgress? progress;
 
-  const _WelcomeBanner({required this.onStart});
+  const _WelcomeBanner({
+    required this.onStart,
+    required this.isLoading,
+    required this.progress,
+  });
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
+    final isCompleted = progress != null;
+
     return Container(
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [cs.primary, cs.primary.withValues(alpha: 0.78)],
+          colors: [
+            cs.primary,
+            cs.primary.withValues(
+              alpha: 0.78,
+            ),
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(26),
         boxShadow: [
           BoxShadow(
-            color: cs.primary.withValues(alpha: 0.22),
+            color: cs.primary.withValues(
+              alpha: 0.22,
+            ),
             blurRadius: 22,
             offset: const Offset(0, 10),
           ),
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment:
+            CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+            padding:
+                const EdgeInsets.symmetric(
+                  horizontal: 11,
+                  vertical: 6,
+                ),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.16),
-              borderRadius: BorderRadius.circular(20),
+              color: Colors.white.withValues(
+                alpha: 0.16,
+              ),
+              borderRadius:
+                  BorderRadius.circular(20),
             ),
-            child: const Text(
-              'LEARN • GROW • SUCCEED',
-              style: TextStyle(
+            child: Text(
+              isCompleted
+                  ? '✓ DAILY CHALLENGE COMPLETED'
+                  : 'LEARN • GROW • SUCCEED',
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
@@ -245,40 +431,88 @@ class _WelcomeBanner extends StatelessWidget {
               ),
             ),
           ),
+
           const SizedBox(height: 18),
-          const Text(
-            'Welcome to\nGenius Academy',
-            style: TextStyle(
+
+          Text(
+            isCompleted
+                ? 'Great work today!'
+                : 'Welcome to\nGenius Academy',
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 30,
               height: 1.1,
               fontWeight: FontWeight.w900,
             ),
           ),
+
           const SizedBox(height: 10),
+
           Text(
-            'A complete learning platform for aptitude, education, languages, examinations and life skills.',
+            isCompleted
+                ? 'You scored ${progress!.score} out of '
+                      '${progress!.totalQuestions}. '
+                      'Come back tomorrow and keep your streak growing.'
+                : 'A complete learning platform for aptitude, '
+                      'education, languages, examinations and '
+                      'life skills.',
             style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.9),
+              color: Colors.white.withValues(
+                alpha: 0.9,
+              ),
               fontSize: 14,
               height: 1.45,
             ),
           ),
+
           const SizedBox(height: 20),
+
           FilledButton.icon(
             style: FilledButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: cs.primary,
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
+              backgroundColor:
+                  Colors.white,
+              foregroundColor:
+                  cs.primary,
+              padding:
+                  const EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 14,
+                  ),
+              shape:
+                  RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(
+                          15,
+                        ),
+                  ),
             ),
-            onPressed: onStart,
-            icon: const Icon(Icons.play_arrow_rounded),
-            label: const Text(
-              'Start Daily Challenge',
-              style: TextStyle(fontWeight: FontWeight.w800),
+            onPressed:
+                isLoading ? null : onStart,
+            icon: isLoading
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child:
+                        CircularProgressIndicator(
+                          strokeWidth: 2,
+                        ),
+                  )
+                : Icon(
+                    isCompleted
+                        ? Icons.replay_rounded
+                        : Icons
+                              .play_arrow_rounded,
+                  ),
+            label: Text(
+              isLoading
+                  ? 'Loading Challenge...'
+                  : isCompleted
+                  ? 'Play Again'
+                  : 'Start Daily Challenge',
+              style: const TextStyle(
+                fontWeight:
+                    FontWeight.w800,
+              ),
             ),
           ),
         ],
@@ -287,7 +521,8 @@ class _WelcomeBanner extends StatelessWidget {
   }
 }
 
-class _SectionHeader extends StatelessWidget {
+class _SectionHeader
+    extends StatelessWidget {
   final String title;
   final String subtitle;
   final String? actionLabel;
@@ -302,53 +537,73 @@ class _SectionHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment:
+          CrossAxisAlignment.end,
       children: [
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment:
+                CrossAxisAlignment.start,
             children: [
               Text(
                 title,
                 style: TextStyle(
                   fontSize: 21,
-                  fontWeight: FontWeight.w900,
+                  fontWeight:
+                      FontWeight.w900,
                   color: cs.onSurface,
                 ),
               ),
+
               const SizedBox(height: 4),
+
               Text(
                 subtitle,
                 style: TextStyle(
                   fontSize: 13,
                   height: 1.35,
-                  color: cs.onSurfaceVariant,
+                  color:
+                      cs.onSurfaceVariant,
                 ),
               ),
             ],
           ),
         ),
-        if (actionLabel != null && onAction != null)
-          TextButton(onPressed: onAction, child: Text(actionLabel!)),
+
+        if (actionLabel != null &&
+            onAction != null)
+          TextButton(
+            onPressed: onAction,
+            child: Text(
+              actionLabel!,
+            ),
+          ),
       ],
     );
   }
 }
 
-class _AcademyBranchCard extends StatelessWidget {
+class _AcademyBranchCard
+    extends StatelessWidget {
   final AcademyBranch branch;
   final VoidCallback onTap;
 
-  const _AcademyBranchCard({required this.branch, required this.onTap});
+  const _AcademyBranchCard({
+    required this.branch,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
-    final isAvailable = branch.id == 'genius_iq';
+    final isAvailable =
+        branch.id == 'genius_iq';
 
     return Card(
       elevation: 0,
@@ -356,73 +611,117 @@ class _AcademyBranchCard extends StatelessWidget {
       color: cs.surfaceContainerHigh,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(22),
-        side: BorderSide(color: branch.color.withValues(alpha: 0.16)),
+        borderRadius:
+            BorderRadius.circular(22),
+        side: BorderSide(
+          color: branch.color.withValues(
+            alpha: 0.16,
+          ),
+        ),
       ),
       child: InkWell(
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding:
+              const EdgeInsets.all(16),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment:
+                CrossAxisAlignment.start,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment:
+                    CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: 52,
                     height: 52,
-                    decoration: BoxDecoration(
-                      color: branch.color.withValues(alpha: 0.13),
-                      borderRadius: BorderRadius.circular(17),
+                    decoration:
+                        BoxDecoration(
+                          color: branch.color
+                              .withValues(
+                                alpha:
+                                    0.13,
+                              ),
+                          borderRadius:
+                              BorderRadius.circular(
+                                17,
+                              ),
+                        ),
+                    child: Icon(
+                      branch.icon,
+                      size: 28,
+                      color:
+                          branch.color,
                     ),
-                    child: Icon(branch.icon, size: 28, color: branch.color),
                   ),
+
                   const Spacer(),
-                  _StatusBadge(isAvailable: isAvailable),
+
+                  _StatusBadge(
+                    isAvailable:
+                        isAvailable,
+                  ),
                 ],
               ),
+
               const SizedBox(height: 16),
+
               Text(
                 branch.name,
                 maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                overflow:
+                    TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 17,
                   height: 1.15,
-                  fontWeight: FontWeight.w900,
+                  fontWeight:
+                      FontWeight.w900,
                   color: cs.onSurface,
                 ),
               ),
+
               const SizedBox(height: 8),
+
               Expanded(
                 child: Text(
                   branch.description,
                   maxLines: 4,
-                  overflow: TextOverflow.ellipsis,
+                  overflow:
+                      TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 12.5,
                     height: 1.4,
-                    color: cs.onSurfaceVariant,
+                    color:
+                        cs.onSurfaceVariant,
                   ),
                 ),
               ),
+
               const SizedBox(height: 12),
+
               Row(
                 children: [
                   Text(
-                    isAvailable ? 'Start learning' : 'View path',
+                    isAvailable
+                        ? 'Start learning'
+                        : 'View path',
                     style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.w800,
-                      color: branch.color,
+                      fontWeight:
+                          FontWeight.w800,
+                      color:
+                          branch.color,
                     ),
                   ),
+
                   const SizedBox(width: 5),
+
                   Icon(
-                    Icons.arrow_forward_rounded,
+                    Icons
+                        .arrow_forward_rounded,
                     size: 18,
-                    color: branch.color,
+                    color:
+                        branch.color,
                   ),
                 ],
               ),
@@ -434,38 +733,66 @@ class _AcademyBranchCard extends StatelessWidget {
   }
 }
 
-class _StatusBadge extends StatelessWidget {
+class _StatusBadge
+    extends StatelessWidget {
   final bool isAvailable;
 
-  const _StatusBadge({required this.isAvailable});
+  const _StatusBadge({
+    required this.isAvailable,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+      padding:
+          const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 5,
+          ),
       decoration: BoxDecoration(
         color: isAvailable
             ? const Color(0xFFE8F5E9)
-            : cs.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20),
+            : cs.primary.withValues(
+                alpha: 0.1,
+              ),
+        borderRadius:
+            BorderRadius.circular(20),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize:
+            MainAxisSize.min,
         children: [
           Icon(
-            isAvailable ? Icons.check_circle_outline : Icons.lock_outline,
+            isAvailable
+                ? Icons
+                      .check_circle_outline
+                : Icons.lock_outline,
             size: 13,
-            color: isAvailable ? const Color(0xFF2E7D32) : cs.primary,
+            color: isAvailable
+                ? const Color(
+                    0xFF2E7D32,
+                  )
+                : cs.primary,
           ),
+
           const SizedBox(width: 4),
+
           Text(
-            isAvailable ? 'Open' : 'Premium',
+            isAvailable
+                ? 'Open'
+                : 'Premium',
             style: TextStyle(
               fontSize: 10,
-              fontWeight: FontWeight.w800,
-              color: isAvailable ? const Color(0xFF2E7D32) : cs.primary,
+              fontWeight:
+                  FontWeight.w800,
+              color: isAvailable
+                  ? const Color(
+                      0xFF2E7D32,
+                    )
+                  : cs.primary,
             ),
           ),
         ],
@@ -474,7 +801,8 @@ class _StatusBadge extends StatelessWidget {
   }
 }
 
-class _ProgressCard extends StatelessWidget {
+class _ProgressCard
+    extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
@@ -487,42 +815,66 @@ class _ProgressCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding:
+          const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: cs.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(20),
+        color:
+            cs.surfaceContainerHigh,
+        borderRadius:
+            BorderRadius.circular(20),
       ),
       child: Row(
         children: [
           Container(
             width: 42,
             height: 42,
-            decoration: BoxDecoration(
-              color: cs.primary.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(14),
+            decoration:
+                BoxDecoration(
+                  color: cs.primary
+                      .withValues(
+                        alpha: 0.1,
+                      ),
+                  borderRadius:
+                      BorderRadius.circular(
+                        14,
+                      ),
+                ),
+            child: Icon(
+              icon,
+              color: cs.primary,
             ),
-            child: Icon(icon, color: cs.primary),
           ),
+
           const SizedBox(width: 12),
+
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: TextStyle(
                     fontSize: 17,
-                    fontWeight: FontWeight.w900,
+                    fontWeight:
+                        FontWeight.w900,
                     color: cs.onSurface,
                   ),
                 ),
+
                 const SizedBox(height: 2),
+
                 Text(
                   subtitle,
-                  style: TextStyle(fontSize: 11.5, color: cs.onSurfaceVariant),
+                  style: TextStyle(
+                    fontSize: 11.5,
+                    color: cs
+                        .onSurfaceVariant,
+                  ),
                 ),
               ],
             ),
@@ -533,64 +885,98 @@ class _ProgressCard extends StatelessWidget {
   }
 }
 
-class _ContinueLearningCard extends StatelessWidget {
+class _ContinueLearningCard
+    extends StatelessWidget {
   final VoidCallback onTap;
 
-  const _ContinueLearningCard({required this.onTap});
+  const _ContinueLearningCard({
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
     return Card(
       elevation: 0,
       margin: EdgeInsets.zero,
       color: cs.surfaceContainerHigh,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: RoundedRectangleBorder(
+        borderRadius:
+            BorderRadius.circular(20),
+      ),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius:
+            BorderRadius.circular(20),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding:
+              const EdgeInsets.all(16),
           child: Row(
             children: [
               Container(
                 width: 48,
                 height: 48,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFF3E0),
-                  borderRadius: BorderRadius.circular(15),
-                ),
+                decoration:
+                    BoxDecoration(
+                      color:
+                          const Color(
+                            0xFFFFF3E0,
+                          ),
+                      borderRadius:
+                          BorderRadius.circular(
+                            15,
+                          ),
+                    ),
                 child: const Icon(
-                  Icons.psychology_alt_outlined,
-                  color: Color(0xFFF57C00),
+                  Icons
+                      .psychology_alt_outlined,
+                  color:
+                      Color(0xFFF57C00),
                 ),
               ),
+
               const SizedBox(width: 14),
+
               Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment:
+                      CrossAxisAlignment
+                          .start,
                   children: [
                     Text(
                       'Continue with Genius IQ',
                       style: TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.w800,
-                        color: cs.onSurface,
+                        fontWeight:
+                            FontWeight
+                                .w800,
+                        color:
+                            cs.onSurface,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                    const SizedBox(
+                      height: 4,
+                    ),
+
                     Text(
                       'Logic, mathematics, patterns and aptitude.',
                       style: TextStyle(
                         fontSize: 12.5,
-                        color: cs.onSurfaceVariant,
+                        color: cs
+                            .onSurfaceVariant,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right_rounded),
+
+              const Icon(
+                Icons
+                    .chevron_right_rounded,
+              ),
             ],
           ),
         ),
@@ -599,50 +985,78 @@ class _ContinueLearningCard extends StatelessWidget {
   }
 }
 
-class _PremiumBanner extends StatelessWidget {
+class _PremiumBanner
+    extends StatelessWidget {
   final VoidCallback onTap;
 
-  const _PremiumBanner({required this.onTap});
+  const _PremiumBanner({
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(18),
+      padding:
+          const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF3E0),
-        borderRadius: BorderRadius.circular(22),
+        color:
+            const Color(0xFFFFF3E0),
+        borderRadius:
+            BorderRadius.circular(22),
       ),
       child: Row(
         children: [
           const Icon(
-            Icons.workspace_premium_rounded,
+            Icons
+                .workspace_premium_rounded,
             size: 36,
-            color: Color(0xFFF57C00),
+            color: Color(
+              0xFFF57C00,
+            ),
           ),
+
           const SizedBox(width: 14),
+
           const Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
               children: [
                 Text(
                   'Unlock the Complete Academy',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight:
+                        FontWeight.w900,
+                  ),
                 ),
+
                 SizedBox(height: 4),
+
                 Text(
                   'Access premium learning paths, lessons and quizzes.',
-                  style: TextStyle(fontSize: 12.5, height: 1.35),
+                  style: TextStyle(
+                    fontSize: 12.5,
+                    height: 1.35,
+                  ),
                 ),
               ],
             ),
           ),
+
           const SizedBox(width: 10),
+
           FilledButton(
-            style: FilledButton.styleFrom(
-              backgroundColor: const Color(0xFFF57C00),
-            ),
+            style:
+                FilledButton.styleFrom(
+                  backgroundColor:
+                      const Color(
+                        0xFFF57C00,
+                      ),
+                ),
             onPressed: onTap,
-            child: const Text('View'),
+            child:
+                const Text('View'),
           ),
         ],
       ),
@@ -650,33 +1064,54 @@ class _PremiumBanner extends StatelessWidget {
   }
 }
 
-class _BranchErrorCard extends StatelessWidget {
-  final Future<void> Function() onRetry;
+class _BranchErrorCard
+    extends StatelessWidget {
+  final Future<void> Function()
+  onRetry;
 
-  const _BranchErrorCard({required this.onRetry});
+  const _BranchErrorCard({
+    required this.onRetry,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+    final cs =
+        Theme.of(context).colorScheme;
 
     return Card(
       elevation: 0,
       color: cs.errorContainer,
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding:
+            const EdgeInsets.all(20),
         child: Column(
           children: [
-            Icon(Icons.error_outline, size: 34, color: cs.onErrorContainer),
+            Icon(
+              Icons.error_outline,
+              size: 34,
+              color:
+                  cs.onErrorContainer,
+            ),
+
             const SizedBox(height: 10),
+
             Text(
               'Unable to load learning paths.',
               style: TextStyle(
-                fontWeight: FontWeight.w800,
-                color: cs.onErrorContainer,
+                fontWeight:
+                    FontWeight.w800,
+                color:
+                    cs.onErrorContainer,
               ),
             ),
+
             const SizedBox(height: 10),
-            OutlinedButton(onPressed: onRetry, child: const Text('Try Again')),
+
+            OutlinedButton(
+              onPressed: onRetry,
+              child:
+                  const Text('Try Again'),
+            ),
           ],
         ),
       ),
@@ -684,7 +1119,8 @@ class _BranchErrorCard extends StatelessWidget {
   }
 }
 
-class _EmptyBranchCard extends StatelessWidget {
+class _EmptyBranchCard
+    extends StatelessWidget {
   const _EmptyBranchCard();
 
   @override
@@ -692,9 +1128,12 @@ class _EmptyBranchCard extends StatelessWidget {
     return const Card(
       elevation: 0,
       child: Padding(
-        padding: EdgeInsets.all(24),
+        padding:
+            EdgeInsets.all(24),
         child: Center(
-          child: Text('No learning paths are currently available.'),
+          child: Text(
+            'No learning paths are currently available.',
+          ),
         ),
       ),
     );

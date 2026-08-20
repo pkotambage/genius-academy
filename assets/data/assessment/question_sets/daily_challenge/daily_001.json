@@ -1,0 +1,30 @@
+{
+  "id": "GA-DAILY-QS-001",
+  "title": "Daily Challenge",
+  "description": "A 10-question daily reasoning challenge.",
+  "assessmentType": "daily_challenge",
+  "branchId": "genius_iq",
+  "programmeId": "GIQ-LR",
+  "subjectId": "GIQ-LR-01",
+  "topicId": "GIQ-LR-01-T01",
+  "lessonId": null,
+  "questionIds": [
+    "GIQ-LR-01-T01-L04-Q001",
+    "GIQ-LR-01-T01-L04-Q002",
+    "GIQ-LR-01-T01-L04-Q003",
+    "GIQ-LR-01-T01-L04-Q004",
+    "GIQ-LR-01-T01-L04-Q005",
+    "GIQ-LR-01-T01-L04-Q006",
+    "GIQ-LR-01-T01-L04-Q007",
+    "GIQ-LR-01-T01-L04-Q008",
+    "GIQ-LR-01-T01-L04-Q009",
+    "GIQ-LR-01-T01-L04-Q010"
+  ],
+  "shuffleQuestions": true,
+  "shuffleOptions": false,
+  "maximumQuestions": 10,
+  "timeLimitSeconds": null,
+  "passPercentage": 70,
+  "isPremium": false,
+  "isActive": true
+}

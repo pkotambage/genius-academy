@@ -1,0 +1,6 @@
+{
+  "dailyChallengeVersion": "1.0.0",
+  "dailyChallengeModules": [
+    "assets/data/daily_challenges/challenges/launch_challenge_01.json"
+  ]
+}

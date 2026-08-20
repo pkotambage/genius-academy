@@ -1,0 +1,9 @@
+{
+  "id": "GA-DAILY-LAUNCH-001",
+  "title": "Daily Challenge",
+  "description": "Complete today's 10-question Genius Challenge and sharpen your reasoning skills.",
+  "questionSetId": "GA-DAILY-QS-001",
+  "availableFrom": "2026-08-20",
+  "availableUntil": null,
+  "isActive": true
+}

@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+
   shared_preferences: ^2.5.3
 
   cupertino_icons: ^1.0.8
@@ -32,11 +32,18 @@ flutter:
     - assets/questions/
     - assets/icon/
     - assets/splash/
+
     - assets/data/
+
     - assets/data/lessons/logical_reasoning/
+
     - assets/data/assessment/manifests/
     - assets/data/assessment/questions/logical_reasoning/
     - assets/data/assessment/question_sets/logical_reasoning/statements_conclusions/
+    - assets/data/assessment/question_sets/daily_challenge/
+
+    - assets/data/daily_challenges/
+    - assets/data/daily_challenges/challenges/
 
 flutter_launcher_icons:
   android: true
