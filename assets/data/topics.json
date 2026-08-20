@@ -3,7 +3,7 @@
     "id": "GIQ-LR-01-T01",
     "subjectId": "GIQ-LR-01",
     "title": "Understanding Statements",
-    "description": "Learn what statements are, how they communicate information, and how to distinguish statements from questions, commands, opinions and other expressions.",
+    "description": "Learn the foundations of statements and conclusions, how to test conclusions, and how to distinguish definite conclusions from possibilities.",
     "iconName": "article",
     "colorValue": "0xFF1565C0",
     "sortOrder": 1,
@@ -19,7 +19,7 @@
     "colorValue": "0xFF1976D2",
     "sortOrder": 2,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-01-T03",
@@ -30,7 +30,7 @@
     "colorValue": "0xFF00897B",
     "sortOrder": 3,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-01-T04",
@@ -41,7 +41,7 @@
     "colorValue": "0xFF2E7D32",
     "sortOrder": 4,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-01-T05",
@@ -52,7 +52,7 @@
     "colorValue": "0xFFF57C00",
     "sortOrder": 5,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-01-T06",
@@ -63,7 +63,7 @@
     "colorValue": "0xFF7B1FA2",
     "sortOrder": 6,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-01-T07",
@@ -74,6 +74,6 @@
     "colorValue": "0xFF5D4037",
     "sortOrder": 7,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   }
 ]

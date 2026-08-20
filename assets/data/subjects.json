@@ -19,7 +19,7 @@
     "colorValue": "0xFF1976D2",
     "sortOrder": 2,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-03",
@@ -30,7 +30,7 @@
     "colorValue": "0xFF00897B",
     "sortOrder": 3,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-04",
@@ -41,7 +41,7 @@
     "colorValue": "0xFF2E7D32",
     "sortOrder": 4,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-05",
@@ -52,7 +52,7 @@
     "colorValue": "0xFFF57C00",
     "sortOrder": 5,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-06",
@@ -63,7 +63,7 @@
     "colorValue": "0xFF7B1FA2",
     "sortOrder": 6,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "GIQ-LR-07",
@@ -74,6 +74,6 @@
     "colorValue": "0xFF5D4037",
     "sortOrder": 7,
     "isPremium": false,
-    "isActive": true
+    "isActive": false
   }
 ]
