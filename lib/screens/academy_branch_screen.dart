@@ -6,7 +6,6 @@ import '../repositories/academy_branch_repository.dart';
 import '../repositories/daily_challenge_progress_repository.dart';
 import '../repositories/daily_challenge_repository.dart';
 import 'iq_home_screen.dart';
-import 'premium_screen.dart';
 import 'programme_list_screen.dart';
 import 'quiz_screen.dart';
 
@@ -25,7 +24,7 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
       DailyChallengeRepository();
 
   final DailyChallengeProgressRepository
-  _dailyChallengeProgressRepository =
+      _dailyChallengeProgressRepository =
       DailyChallengeProgressRepository();
 
   late Future<List<AcademyBranch>> _branchesFuture;
@@ -42,7 +41,6 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
     super.initState();
 
     _branchesFuture = _branchRepository.getBranches();
-
     _loadDailyChallengeProgress();
   }
 
@@ -52,7 +50,6 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
     });
 
     await _branchesFuture;
-
     await _loadDailyChallengeProgress();
   }
 
@@ -75,32 +72,17 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
   }
 
   void _openBranch(AcademyBranch branch) {
-    if (branch.id == 'genius_iq') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const ProgrammeListScreen(
-            branchId: 'genius_iq',
-            title: 'Genius IQ',
-          ),
-        ),
-      );
+    if (branch.id != 'genius_iq') {
       return;
     }
 
-    if (branch.isPremium) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const PremiumScreen(),
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const ProgrammeListScreen(
+          branchId: 'genius_iq',
+          title: 'Genius IQ',
         ),
-      );
-      return;
-    }
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('${branch.name} is coming soon.'),
       ),
     );
   }
@@ -126,7 +108,7 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
-              'Today\'s Daily Challenge is not available yet.',
+              'Today\'s Daily Challenge is not available.',
             ),
           ),
         );
@@ -143,15 +125,15 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
       );
 
       await _loadDailyChallengeProgress();
-    } catch (error) {
+    } catch (_) {
       if (!mounted) {
         return;
       }
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text(
-            'Unable to load today\'s Daily Challenge. $error',
+            'Unable to load today\'s Daily Challenge.',
           ),
         ),
       );
@@ -173,15 +155,6 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
     );
   }
 
-  void _openPremium() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => const PremiumScreen(),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
@@ -194,15 +167,6 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
             fontWeight: FontWeight.w800,
           ),
         ),
-        actions: [
-          IconButton(
-            tooltip: 'Premium',
-            onPressed: _openPremium,
-            icon: const Icon(
-              Icons.workspace_premium_outlined,
-            ),
-          ),
-        ],
       ),
       body: RefreshIndicator(
         onRefresh: _reloadBranches,
@@ -223,12 +187,10 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 
             const SizedBox(height: 24),
 
-            _SectionHeader(
-              title: 'Explore Genius Academy',
+            const _SectionHeader(
+              title: 'Learn with Genius Academy',
               subtitle:
-                  'Choose the learning path that matches your goals.',
-              actionLabel: 'Premium',
-              onAction: _openPremium,
+                  'Build your reasoning skills through structured lessons and daily practice.',
             ),
 
             const SizedBox(height: 14),
@@ -273,19 +235,14 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
                       itemCount: branches.length,
                       gridDelegate:
                           SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount:
-                                isWide ? 4 : 2,
-                            crossAxisSpacing: 12,
-                            mainAxisSpacing: 12,
-                            childAspectRatio:
-                                isWide ? 0.98 : 0.86,
-                          ),
-                      itemBuilder: (
-                        context,
-                        index,
-                      ) {
-                        final branch =
-                            branches[index];
+                        crossAxisCount: isWide ? 4 : 2,
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 12,
+                        childAspectRatio:
+                            isWide ? 0.98 : 0.86,
+                      ),
+                      itemBuilder: (context, index) {
+                        final branch = branches[index];
 
                         return _AcademyBranchCard(
                           branch: branch,
@@ -317,7 +274,7 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
                         .local_fire_department_outlined,
                     title: _isLoadingProgress
                         ? '...'
-                        : '$_streakCount Days',
+                        : '$_streakCount ${_streakCount == 1 ? 'Day' : 'Days'}',
                     subtitle: 'Current streak',
                   ),
                 ),
@@ -331,10 +288,9 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
                     title: _isLoadingProgress
                         ? '...'
                         : _todayProgress == null
-                        ? 'Not Yet'
-                        : '${_todayProgress!.score}/${_todayProgress!.totalQuestions}',
-                    subtitle:
-                        _todayProgress == null
+                            ? 'Not Yet'
+                            : '${_todayProgress!.score}/${_todayProgress!.totalQuestions}',
+                    subtitle: _todayProgress == null
                         ? 'Today\'s challenge'
                         : 'Today completed',
                   ),
@@ -346,12 +302,6 @@ class _AcademyBranchScreenState extends State<AcademyBranchScreen> {
 
             _ContinueLearningCard(
               onTap: _openGeniusIq,
-            ),
-
-            const SizedBox(height: 24),
-
-            _PremiumBanner(
-              onTap: _openPremium,
             ),
           ],
         ),
@@ -384,9 +334,7 @@ class _WelcomeBanner extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             cs.primary,
-            cs.primary.withValues(
-              alpha: 0.78,
-            ),
+            cs.primary.withValues(alpha: 0.78),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -394,9 +342,7 @@ class _WelcomeBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(26),
         boxShadow: [
           BoxShadow(
-            color: cs.primary.withValues(
-              alpha: 0.22,
-            ),
+            color: cs.primary.withValues(alpha: 0.22),
             blurRadius: 22,
             offset: const Offset(0, 10),
           ),
@@ -407,11 +353,10 @@ class _WelcomeBanner extends StatelessWidget {
             CrossAxisAlignment.start,
         children: [
           Container(
-            padding:
-                const EdgeInsets.symmetric(
-                  horizontal: 11,
-                  vertical: 6,
-                ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 11,
+              vertical: 6,
+            ),
             decoration: BoxDecoration(
               color: Colors.white.withValues(
                 alpha: 0.16,
@@ -451,11 +396,10 @@ class _WelcomeBanner extends StatelessWidget {
           Text(
             isCompleted
                 ? 'You scored ${progress!.score} out of '
-                      '${progress!.totalQuestions}. '
-                      'Come back tomorrow and keep your streak growing.'
-                : 'A complete learning platform for aptitude, '
-                      'education, languages, examinations and '
-                      'life skills.',
+                    '${progress!.totalQuestions}. '
+                    'Come back tomorrow and keep your streak growing.'
+                : 'Train your reasoning skills with structured '
+                    'learning and a fresh daily challenge.',
             style: TextStyle(
               color: Colors.white.withValues(
                 alpha: 0.9,
@@ -469,22 +413,16 @@ class _WelcomeBanner extends StatelessWidget {
 
           FilledButton.icon(
             style: FilledButton.styleFrom(
-              backgroundColor:
-                  Colors.white,
-              foregroundColor:
-                  cs.primary,
-              padding:
-                  const EdgeInsets.symmetric(
-                    horizontal: 18,
-                    vertical: 14,
-                  ),
-              shape:
-                  RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(
-                          15,
-                        ),
-                  ),
+              backgroundColor: Colors.white,
+              foregroundColor: cs.primary,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 18,
+                vertical: 14,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius:
+                    BorderRadius.circular(15),
+              ),
             ),
             onPressed:
                 isLoading ? null : onStart,
@@ -494,24 +432,22 @@ class _WelcomeBanner extends StatelessWidget {
                     height: 18,
                     child:
                         CircularProgressIndicator(
-                          strokeWidth: 2,
-                        ),
+                      strokeWidth: 2,
+                    ),
                   )
                 : Icon(
                     isCompleted
                         ? Icons.replay_rounded
-                        : Icons
-                              .play_arrow_rounded,
+                        : Icons.play_arrow_rounded,
                   ),
             label: Text(
               isLoading
                   ? 'Loading Challenge...'
                   : isCompleted
-                  ? 'Play Again'
-                  : 'Start Daily Challenge',
+                      ? 'Play Again'
+                      : 'Start Daily Challenge',
               style: const TextStyle(
-                fontWeight:
-                    FontWeight.w800,
+                fontWeight: FontWeight.w800,
               ),
             ),
           ),
@@ -521,74 +457,48 @@ class _WelcomeBanner extends StatelessWidget {
   }
 }
 
-class _SectionHeader
-    extends StatelessWidget {
+class _SectionHeader extends StatelessWidget {
   final String title;
   final String subtitle;
-  final String? actionLabel;
-  final VoidCallback? onAction;
 
   const _SectionHeader({
     required this.title,
     required this.subtitle,
-    this.actionLabel,
-    this.onAction,
   });
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
+    final cs = Theme.of(context).colorScheme;
 
-    return Row(
+    return Column(
       crossAxisAlignment:
-          CrossAxisAlignment.end,
+          CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment:
-                CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 21,
-                  fontWeight:
-                      FontWeight.w900,
-                  color: cs.onSurface,
-                ),
-              ),
-
-              const SizedBox(height: 4),
-
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontSize: 13,
-                  height: 1.35,
-                  color:
-                      cs.onSurfaceVariant,
-                ),
-              ),
-            ],
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 21,
+            fontWeight: FontWeight.w900,
+            color: cs.onSurface,
           ),
         ),
 
-        if (actionLabel != null &&
-            onAction != null)
-          TextButton(
-            onPressed: onAction,
-            child: Text(
-              actionLabel!,
-            ),
+        const SizedBox(height: 4),
+
+        Text(
+          subtitle,
+          style: TextStyle(
+            fontSize: 13,
+            height: 1.35,
+            color: cs.onSurfaceVariant,
           ),
+        ),
       ],
     );
   }
 }
 
-class _AcademyBranchCard
-    extends StatelessWidget {
+class _AcademyBranchCard extends StatelessWidget {
   final AcademyBranch branch;
   final VoidCallback onTap;
 
@@ -599,11 +509,7 @@ class _AcademyBranchCard
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
-
-    final isAvailable =
-        branch.id == 'genius_iq';
+    final cs = Theme.of(context).colorScheme;
 
     return Card(
       elevation: 0,
@@ -622,8 +528,7 @@ class _AcademyBranchCard
       child: InkWell(
         onTap: onTap,
         child: Padding(
-          padding:
-              const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment:
                 CrossAxisAlignment.start,
@@ -635,32 +540,26 @@ class _AcademyBranchCard
                   Container(
                     width: 52,
                     height: 52,
-                    decoration:
-                        BoxDecoration(
-                          color: branch.color
-                              .withValues(
-                                alpha:
-                                    0.13,
-                              ),
-                          borderRadius:
-                              BorderRadius.circular(
-                                17,
-                              ),
-                        ),
+                    decoration: BoxDecoration(
+                      color: branch.color
+                          .withValues(
+                        alpha: 0.13,
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(
+                        17,
+                      ),
+                    ),
                     child: Icon(
                       branch.icon,
                       size: 28,
-                      color:
-                          branch.color,
+                      color: branch.color,
                     ),
                   ),
 
                   const Spacer(),
 
-                  _StatusBadge(
-                    isAvailable:
-                        isAvailable,
-                  ),
+                  const _OpenBadge(),
                 ],
               ),
 
@@ -702,15 +601,12 @@ class _AcademyBranchCard
               Row(
                 children: [
                   Text(
-                    isAvailable
-                        ? 'Start learning'
-                        : 'View path',
+                    'Start learning',
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight:
                           FontWeight.w800,
-                      color:
-                          branch.color,
+                      color: branch.color,
                     ),
                   ),
 
@@ -720,8 +616,7 @@ class _AcademyBranchCard
                     Icons
                         .arrow_forward_rounded,
                     size: 18,
-                    color:
-                        branch.color,
+                    color: branch.color,
                   ),
                 ],
               ),
@@ -733,66 +628,36 @@ class _AcademyBranchCard
   }
 }
 
-class _StatusBadge
-    extends StatelessWidget {
-  final bool isAvailable;
-
-  const _StatusBadge({
-    required this.isAvailable,
-  });
+class _OpenBadge extends StatelessWidget {
+  const _OpenBadge();
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
-
     return Container(
-      padding:
-          const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 5,
-          ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 5,
+      ),
       decoration: BoxDecoration(
-        color: isAvailable
-            ? const Color(0xFFE8F5E9)
-            : cs.primary.withValues(
-                alpha: 0.1,
-              ),
+        color: const Color(0xFFE8F5E9),
         borderRadius:
             BorderRadius.circular(20),
       ),
-      child: Row(
-        mainAxisSize:
-            MainAxisSize.min,
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            isAvailable
-                ? Icons
-                      .check_circle_outline
-                : Icons.lock_outline,
+            Icons.check_circle_outline,
             size: 13,
-            color: isAvailable
-                ? const Color(
-                    0xFF2E7D32,
-                  )
-                : cs.primary,
+            color: Color(0xFF2E7D32),
           ),
-
-          const SizedBox(width: 4),
-
+          SizedBox(width: 4),
           Text(
-            isAvailable
-                ? 'Open'
-                : 'Premium',
+            'Open',
             style: TextStyle(
               fontSize: 10,
-              fontWeight:
-                  FontWeight.w800,
-              color: isAvailable
-                  ? const Color(
-                      0xFF2E7D32,
-                    )
-                  : cs.primary,
+              fontWeight: FontWeight.w800,
+              color: Color(0xFF2E7D32),
             ),
           ),
         ],
@@ -801,8 +666,7 @@ class _StatusBadge
   }
 }
 
-class _ProgressCard
-    extends StatelessWidget {
+class _ProgressCard extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
@@ -815,15 +679,12 @@ class _ProgressCard
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Container(
-      padding:
-          const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color:
-            cs.surfaceContainerHigh,
+        color: cs.surfaceContainerHigh,
         borderRadius:
             BorderRadius.circular(20),
       ),
@@ -832,17 +693,13 @@ class _ProgressCard
           Container(
             width: 42,
             height: 42,
-            decoration:
-                BoxDecoration(
-                  color: cs.primary
-                      .withValues(
-                        alpha: 0.1,
-                      ),
-                  borderRadius:
-                      BorderRadius.circular(
-                        14,
-                      ),
-                ),
+            decoration: BoxDecoration(
+              color: cs.primary.withValues(
+                alpha: 0.1,
+              ),
+              borderRadius:
+                  BorderRadius.circular(14),
+            ),
             child: Icon(
               icon,
               color: cs.primary,
@@ -872,8 +729,8 @@ class _ProgressCard
                   subtitle,
                   style: TextStyle(
                     fontSize: 11.5,
-                    color: cs
-                        .onSurfaceVariant,
+                    color:
+                        cs.onSurfaceVariant,
                   ),
                 ),
               ],
@@ -885,8 +742,7 @@ class _ProgressCard
   }
 }
 
-class _ContinueLearningCard
-    extends StatelessWidget {
+class _ContinueLearningCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const _ContinueLearningCard({
@@ -895,8 +751,7 @@ class _ContinueLearningCard
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Card(
       elevation: 0,
@@ -911,24 +766,20 @@ class _ContinueLearningCard
         borderRadius:
             BorderRadius.circular(20),
         child: Padding(
-          padding:
-              const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Row(
             children: [
               Container(
                 width: 48,
                 height: 48,
-                decoration:
-                    BoxDecoration(
-                      color:
-                          const Color(
-                            0xFFFFF3E0,
-                          ),
-                      borderRadius:
-                          BorderRadius.circular(
-                            15,
-                          ),
-                    ),
+                decoration: BoxDecoration(
+                  color:
+                      const Color(0xFFFFF3E0),
+                  borderRadius:
+                      BorderRadius.circular(
+                    15,
+                  ),
+                ),
                 child: const Icon(
                   Icons
                       .psychology_alt_outlined,
@@ -942,31 +793,26 @@ class _ContinueLearningCard
               Expanded(
                 child: Column(
                   crossAxisAlignment:
-                      CrossAxisAlignment
-                          .start,
+                      CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Continue with Genius IQ',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight:
-                            FontWeight
-                                .w800,
-                        color:
-                            cs.onSurface,
+                            FontWeight.w800,
+                        color: cs.onSurface,
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 4,
-                    ),
+                    const SizedBox(height: 4),
 
                     Text(
-                      'Logic, mathematics, patterns and aptitude.',
+                      'Logical reasoning, statements, conclusions and daily practice.',
                       style: TextStyle(
                         fontSize: 12.5,
-                        color: cs
-                            .onSurfaceVariant,
+                        color:
+                            cs.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -974,8 +820,7 @@ class _ContinueLearningCard
               ),
 
               const Icon(
-                Icons
-                    .chevron_right_rounded,
+                Icons.chevron_right_rounded,
               ),
             ],
           ),
@@ -985,89 +830,9 @@ class _ContinueLearningCard
   }
 }
 
-class _PremiumBanner
-    extends StatelessWidget {
-  final VoidCallback onTap;
-
-  const _PremiumBanner({
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding:
-          const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color:
-            const Color(0xFFFFF3E0),
-        borderRadius:
-            BorderRadius.circular(22),
-      ),
-      child: Row(
-        children: [
-          const Icon(
-            Icons
-                .workspace_premium_rounded,
-            size: 36,
-            color: Color(
-              0xFFF57C00,
-            ),
-          ),
-
-          const SizedBox(width: 14),
-
-          const Expanded(
-            child: Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Unlock the Complete Academy',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight:
-                        FontWeight.w900,
-                  ),
-                ),
-
-                SizedBox(height: 4),
-
-                Text(
-                  'Access premium learning paths, lessons and quizzes.',
-                  style: TextStyle(
-                    fontSize: 12.5,
-                    height: 1.35,
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          const SizedBox(width: 10),
-
-          FilledButton(
-            style:
-                FilledButton.styleFrom(
-                  backgroundColor:
-                      const Color(
-                        0xFFF57C00,
-                      ),
-                ),
-            onPressed: onTap,
-            child:
-                const Text('View'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _BranchErrorCard
-    extends StatelessWidget {
+class _BranchErrorCard extends StatelessWidget {
   final Future<void> Function()
-  onRetry;
+      onRetry;
 
   const _BranchErrorCard({
     required this.onRetry,
@@ -1075,15 +840,13 @@ class _BranchErrorCard
 
   @override
   Widget build(BuildContext context) {
-    final cs =
-        Theme.of(context).colorScheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Card(
       elevation: 0,
       color: cs.errorContainer,
       child: Padding(
-        padding:
-            const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             Icon(
@@ -1119,8 +882,7 @@ class _BranchErrorCard
   }
 }
 
-class _EmptyBranchCard
-    extends StatelessWidget {
+class _EmptyBranchCard extends StatelessWidget {
   const _EmptyBranchCard();
 
   @override
@@ -1128,8 +890,7 @@ class _EmptyBranchCard
     return const Card(
       elevation: 0,
       child: Padding(
-        padding:
-            EdgeInsets.all(24),
+        padding: EdgeInsets.all(24),
         child: Center(
           child: Text(
             'No learning paths are currently available.',
