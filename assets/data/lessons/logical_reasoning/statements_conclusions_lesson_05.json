@@ -1,0 +1,143 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L05",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "All, Some and No Statements",
+    "summary": "Learn how the words all, some and no control the meaning of a statement and determine which conclusions can logically follow.",
+    "difficulty": "Foundation",
+    "estimatedMinutes": 10,
+    "sortOrder": 5,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L05-QUIZ",
+    "learningObjectives": [
+      "Interpret statements using all, some and no",
+      "Identify what each quantifier proves and what it does not prove",
+      "Avoid incorrectly reversing an all statement",
+      "Draw safe conclusions from universal, particular and negative statements"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L05-B01",
+        "type": "heading",
+        "title": "Words that control the statement",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "In Statements and Conclusions questions, small words can completely change the logical meaning. The words all, some and no tell us how much of one group is connected with another group. These words are called quantifiers.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B03",
+        "type": "heading",
+        "title": "All",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B04",
+        "type": "example",
+        "title": "All means every member",
+        "content": "Statement: All officers in Unit A wear identity cards. If Kumari is an officer in Unit A, we can definitely conclude that Kumari wears an identity card. However, we cannot conclude that every person wearing an identity card is an officer in Unit A.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B05",
+        "type": "heading",
+        "title": "Some",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B06",
+        "type": "example",
+        "title": "Some means at least one",
+        "content": "Statement: Some teachers are musicians. This guarantees that at least one teacher is a musician. It also means that some musicians are teachers because the same person belongs to both groups. It does not mean that all teachers are musicians.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B07",
+        "type": "heading",
+        "title": "No",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B08",
+        "type": "example",
+        "title": "No means the groups do not overlap",
+        "content": "Statement: No temporary employees may enter the secure room. If Sahan is a temporary employee, he may not enter the secure room. A no relationship can also be read in reverse: if no temporary employees may enter the secure room, then nobody permitted to enter the secure room can be a temporary employee.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B09",
+        "type": "warning",
+        "title": "Do not reverse an all statement",
+        "content": "From 'All lawyers are graduates' you may conclude that a particular lawyer is a graduate. You may not conclude that every graduate is a lawyer. The direction of an all statement matters.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B10",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statements: All managers are employees. No employees are children. Conclusion: No managers are children. Does it follow? Yes. Every manager belongs to the employee group, and the employee group contains no children.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "All applies a rule to every member of a group. Some guarantees at least one shared member. No tells us that two groups do not overlap. Read these words exactly and never strengthen or reverse a statement unless the logic allows it.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L05-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "All means every member of the first group belongs to the second group.",
+          "Some means at least one member belongs to both groups.",
+          "No means the two groups do not overlap.",
+          "Some A are B also means some B are A.",
+          "No A are B also means no B are A.",
+          "All A are B does not automatically mean all B are A."
+        ]
+      }
+    ]
+  }
+]

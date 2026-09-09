@@ -1,0 +1,149 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L06",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "Combining Two Statements",
+    "summary": "Learn how two or more statements can be connected to reach a conclusion through a clear logical chain.",
+    "difficulty": "Foundation",
+    "estimatedMinutes": 11,
+    "sortOrder": 6,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L06-QUIZ",
+    "learningObjectives": [
+      "Connect two related statements to form a logical chain",
+      "Use shared terms to identify relationships between groups",
+      "Draw conclusions that follow through more than one step",
+      "Recognize when two statements cannot be safely connected"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L06-B01",
+        "type": "heading",
+        "title": "Why combine statements?",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "Some conclusions are not stated directly in a single sentence. They become clear only when two or more statements are connected. The key is to find a shared person, group or idea that links the statements.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B03",
+        "type": "example",
+        "title": "A simple chain",
+        "content": "Statements: All doctors are graduates. All graduates are educated. Conclusion: All doctors are educated. The group 'graduates' connects the two statements, so the conclusion follows through a two-step chain.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B04",
+        "type": "keyPoint",
+        "title": "The chain pattern",
+        "content": "If all A are B and all B are C, then all A are C. The middle group B acts as the bridge between A and C.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B05",
+        "type": "example",
+        "title": "Using 'some' in a chain",
+        "content": "Statements: Some students are athletes. All athletes are disciplined. Conclusion: Some students are disciplined. The students who are athletes must also be disciplined.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B06",
+        "type": "example",
+        "title": "Using 'no' in a chain",
+        "content": "Statements: All pilots in Unit A are trained professionals. No trained professionals in Unit A are unlicensed. Conclusion: No pilots in Unit A are unlicensed. The trained-professional group connects the two statements.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B07",
+        "type": "warning",
+        "title": "Do not force a connection",
+        "content": "Statements: Some teachers are writers. Some writers are musicians. You cannot conclude that some teachers are musicians. The two 'some' groups may contain different writers.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B08",
+        "type": "numberedList",
+        "title": "A safe method",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8,
+        "items": [
+          "Identify the subject and group in each statement.",
+          "Look for a shared term that can act as a bridge.",
+          "Follow the direction of each relationship.",
+          "Check whether the same members must continue through the chain.",
+          "Reject the conclusion if the connection is only possible rather than necessary."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B09",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statements: All auditors are accountants. All accountants understand financial records. Conclusion: All auditors understand financial records. Yes. The accountant group links auditors to people who understand financial records.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B10",
+        "type": "warning",
+        "title": "Two 'some' statements need care",
+        "content": "The word 'some' does not identify the same individuals unless the statements force that connection. Never assume that two separate 'some' groups overlap.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "Logical chains allow you to combine statements through a shared term. A conclusion follows only when the connection is necessary. Follow the direction carefully and avoid assuming that separate 'some' groups refer to the same members.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L06-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "A shared term can connect two statements.",
+          "All A are B and all B are C allows all A are C.",
+          "Some A are B and all B are C allows some A are C.",
+          "Separate 'some' statements do not automatically refer to the same members.",
+          "Every step in the chain must be logically guaranteed."
+        ]
+      }
+    ]
+  }
+]

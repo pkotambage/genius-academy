@@ -1,0 +1,150 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L09",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "Advanced Statements and Conclusions",
+    "summary": "Apply all, some and no relationships, logical chains and multiple-conclusion testing to mixed exam-style problems.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 14,
+    "sortOrder": 9,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L09-QUIZ",
+    "learningObjectives": [
+      "Solve mixed statements using all, some and no",
+      "Apply multi-step reasoning across several statements",
+      "Separate definite conclusions from attractive possibilities",
+      "Use a systematic method for exam-style Statements and Conclusions questions"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L09-B01",
+        "type": "heading",
+        "title": "Putting the rules together",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "Advanced Statements and Conclusions questions rarely test only one rule. They combine quantifiers, chains, negative relationships and tempting reversals. The safest approach is to reduce the problem to small logical relationships and test each conclusion carefully.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B03",
+        "type": "example",
+        "title": "Mixed chain",
+        "content": "Statements: Some officers are lawyers. All lawyers are graduates. No graduates are minors. Conclusion: Some officers are not minors. The officers who are lawyers are graduates, and no graduate is a minor, so those officers cannot be minors.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B04",
+        "type": "example",
+        "title": "A tempting but unsupported conclusion",
+        "content": "Statements: All buses are vehicles. Some vehicles are electric. Conclusion: Some buses are electric. This may be true, but it is not guaranteed because the electric vehicles may be vehicles other than buses.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B05",
+        "type": "keyPoint",
+        "title": "Track guaranteed members",
+        "content": "When a statement says 'some A are B', you know that at least one member lies in the overlap. You can safely carry that member through any universal rule that applies to B.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B06",
+        "type": "warning",
+        "title": "Do not create overlap",
+        "content": "Two groups may both belong to a larger group without overlapping each other. 'All doctors are professionals' and 'All lawyers are professionals' does not prove that any doctor is a lawyer.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B07",
+        "type": "numberedList",
+        "title": "Exam-solving method",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7,
+        "items": [
+          "Mark the quantifier in every statement: all, some or no.",
+          "Identify any shared term that creates a logical chain.",
+          "Track guaranteed 'some' members through the chain.",
+          "Reject reversed or strengthened conclusions.",
+          "Test each conclusion for necessity, not possibility.",
+          "If there are multiple conclusions, test each one independently."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B08",
+        "type": "example",
+        "title": "Three-statement reasoning",
+        "content": "Statements: All inspectors are officers. Some inspectors are lawyers. No lawyers are minors. Conclusion: Some officers are not minors. This follows because the inspectors who are lawyers are also officers, and no lawyer can be a minor.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B09",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statements: All teachers are graduates. No graduates are minors. Some teachers are musicians. Conclusion: Some musicians are not minors. Yes. The teachers who are musicians are graduates, and no graduate is a minor.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B10",
+        "type": "warning",
+        "title": "Do not rush because the wording is longer",
+        "content": "A long question is not necessarily more difficult. Break it into small relationships. Ignore details that do not affect the logical connection being tested.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "Advanced questions combine the same rules learned throughout the topic. Mark the quantifiers, connect only guaranteed relationships, track known members through chains and reject conclusions that are merely possible.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L09-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "Advanced questions combine familiar rules rather than introducing new logic.",
+          "Track guaranteed members through valid chains.",
+          "Do not assume overlap between groups without evidence.",
+          "Reject reversed, strengthened or merely possible conclusions.",
+          "Use a systematic method instead of relying on intuition."
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L05-Q001",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statements: All clerks in Branch A use the new computer system. Tharindu is a clerk in Branch A. Which conclusion definitely follows?",
+    "options": [
+      "Tharindu uses the new computer system.",
+      "Everyone who uses the new computer system is a clerk in Branch A.",
+      "Tharindu designed the new computer system.",
+      "Tharindu is the only clerk in Branch A."
+    ],
+    "correctAnswer": "Tharindu uses the new computer system.",
+    "explanation": "The rule applies to every clerk in Branch A. Since Tharindu is a clerk in Branch A, he must use the new computer system.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_all",
+      "logical_deduction"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q002",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statement: Some nurses in the hospital work the night shift. Which conclusion definitely follows?",
+    "options": [
+      "Every nurse works the night shift.",
+      "At least one nurse works the night shift.",
+      "No nurse works during the day.",
+      "Only senior nurses work the night shift."
+    ],
+    "correctAnswer": "At least one nurse works the night shift.",
+    "explanation": "Some means at least one. The statement does not say that all nurses work the night shift or identify which nurses do so.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_some",
+      "statement_analysis"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q003",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statements: No motorcycles are permitted inside the park. Vehicle X is a motorcycle. Which conclusion definitely follows?",
+    "options": [
+      "Vehicle X is permitted inside the park.",
+      "Vehicle X is not permitted inside the park.",
+      "Vehicle X belongs to a park employee.",
+      "Vehicle X is electric."
+    ],
+    "correctAnswer": "Vehicle X is not permitted inside the park.",
+    "explanation": "No motorcycles are permitted inside the park. Since Vehicle X is a motorcycle, it cannot be permitted inside the park.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_no",
+      "negative_statement_reasoning"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q004",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statement: All accountants are graduates. Nadeesha is a graduate. Which conclusion definitely follows?",
+    "options": [
+      "Nadeesha is an accountant.",
+      "Nadeesha works in a bank.",
+      "Nadeesha studied accounting.",
+      "None of the above."
+    ],
+    "correctAnswer": "None of the above.",
+    "explanation": "The statement says that accountants are graduates, not that all graduates are accountants. Nadeesha being a graduate does not prove that she is an accountant.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_all",
+      "reversal_error"
+    ],
+    "examTags": [
+      "banking_exams",
+      "general_aptitude"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q005",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statement: Some teachers are musicians. Which conclusion definitely follows?",
+    "options": [
+      "All musicians are teachers.",
+      "Some musicians are teachers.",
+      "No teachers are musicians.",
+      "Every teacher is a musician."
+    ],
+    "correctAnswer": "Some musicians are teachers.",
+    "explanation": "Some teachers are musicians means that at least one person belongs to both groups. Therefore, it is also true that some musicians are teachers.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_some",
+      "valid_conversion"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "scholarship_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q006",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statement: No lawyers are minors. Which conclusion definitely follows?",
+    "options": [
+      "No minors are lawyers.",
+      "Some minors are lawyers.",
+      "All adults are lawyers.",
+      "Some lawyers are minors."
+    ],
+    "correctAnswer": "No minors are lawyers.",
+    "explanation": "A no relationship is symmetric. If the lawyer group and the minor group do not overlap, then no minors can be lawyers either.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_no",
+      "valid_conversion"
+    ],
+    "examTags": [
+      "law_college",
+      "general_aptitude"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q007",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statements: All roses are flowers. Some flowers are red. Which conclusion about roses and red things definitely follows?",
+    "options": [
+      "All roses are red.",
+      "Some roses are red.",
+      "No roses are red.",
+      "None of the above."
+    ],
+    "correctAnswer": "None of the above.",
+    "explanation": "The red flowers may or may not be roses. The statements do not establish any definite relationship between roses and red things.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_reasoning",
+      "unsupported_conclusion_detection"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q008",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statements: All managers are employees. No employees are children. Which conclusion definitely follows?",
+    "options": [
+      "No managers are children.",
+      "All employees are managers.",
+      "Some children are managers.",
+      "Every child is an employee."
+    ],
+    "correctAnswer": "No managers are children.",
+    "explanation": "Every manager is an employee, and no employee is a child. Therefore, a manager cannot be a child.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_reasoning",
+      "logical_deduction"
+    ],
+    "examTags": [
+      "professional_exams",
+      "general_aptitude"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q009",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Statements: Some students are athletes. No athletes are smokers. Which conclusion definitely follows?",
+    "options": [
+      "Some students are not smokers.",
+      "All students are athletes.",
+      "No students are smokers.",
+      "Some smokers are athletes."
+    ],
+    "correctAnswer": "Some students are not smokers.",
+    "explanation": "At least one student is an athlete. Since no athlete is a smoker, that student must not be a smoker. Therefore, some students are not smokers.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_some",
+      "negative_statement_reasoning"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  },
+  {
+    "id": "GIQ-LR-01-T01-L05-Q010",
+    "category": "GIQ-LR-01-T01-L05-QUIZ",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "lessonId": "GIQ-LR-01-T01-L05",
+    "question": "Which statement correctly describes the logical meaning of 'All A are B'?",
+    "options": [
+      "Every A belongs to B, but B may also contain things that are not A.",
+      "Every B must also be A.",
+      "A and B can never overlap.",
+      "At least one A must be outside B."
+    ],
+    "correctAnswer": "Every A belongs to B, but B may also contain things that are not A.",
+    "explanation": "An all statement places the entire A group inside B. It does not say that the B group contains only A.",
+    "explanationVideoUrl": null,
+    "explanationVideoProvider": null,
+    "explanationVideoTitle": null,
+    "questionImageUrl": null,
+    "explanationImageUrl": null,
+    "difficulty": "Foundation",
+    "competencyIds": [
+      "quantifier_all",
+      "critical_thinking"
+    ],
+    "examTags": [
+      "general_aptitude",
+      "government_exams",
+      "banking_exams"
+    ],
+    "sourceTitle": "All, Some and No Statements",
+    "sourceReference": "Lesson 5",
+    "isPremium": false,
+    "isActive": true
+  }
+]

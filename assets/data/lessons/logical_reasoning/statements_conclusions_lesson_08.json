@@ -1,0 +1,154 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L08",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "Testing Multiple Conclusions",
+    "summary": "Learn how to test Conclusion I and Conclusion II independently and decide whether one, both or neither follows.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 12,
+    "sortOrder": 8,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L08-QUIZ",
+    "learningObjectives": [
+      "Test two proposed conclusions independently",
+      "Use a consistent method for I and II conclusion questions",
+      "Identify when both conclusions follow",
+      "Identify when only one or neither conclusion follows"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L08-B01",
+        "type": "heading",
+        "title": "Why test conclusions separately?",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "In many aptitude questions, the same statements are followed by two conclusions. You must judge each conclusion on its own. One conclusion being correct does not make the other correct or incorrect.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B03",
+        "type": "numberedList",
+        "title": "Four-step method",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3,
+        "items": [
+          "Read and understand the statements.",
+          "Ignore Conclusion II and test Conclusion I completely.",
+          "Return to the original statements and test Conclusion II completely.",
+          "Choose: only I follows, only II follows, both follow, or neither follows."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B04",
+        "type": "example",
+        "title": "Only Conclusion I follows",
+        "content": "Statements: All judges are lawyers. Nimal is a judge. Conclusion I: Nimal is a lawyer. Conclusion II: All lawyers are judges. Conclusion I follows, but Conclusion II incorrectly reverses the statement.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B05",
+        "type": "example",
+        "title": "Both conclusions follow",
+        "content": "Statement: No cats are birds. Conclusion I: No birds are cats. Conclusion II: A cat cannot be a bird. Both conclusions express the same non-overlap relationship and both follow.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B06",
+        "type": "example",
+        "title": "Neither conclusion follows",
+        "content": "Statement: Some employees are graduates. Conclusion I: All employees are graduates. Conclusion II: No graduates are employees. Neither follows because the statement guarantees only some overlap.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B07",
+        "type": "warning",
+        "title": "Do not compare I with II",
+        "content": "Your task is not to decide whether Conclusion I and Conclusion II agree with each other. Each one must be compared directly with the original statements.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B08",
+        "type": "keyPoint",
+        "title": "Reset before testing II",
+        "content": "After deciding Conclusion I, mentally return to the statements. Do not carry an assumption from Conclusion I into your test of Conclusion II.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B09",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statements: All auditors are accountants. All accountants are graduates. Conclusion I: All auditors are graduates. Conclusion II: All graduates are auditors. Only Conclusion I follows. Conclusion II reverses the chain.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B10",
+        "type": "bulletList",
+        "title": "Common answer patterns",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10,
+        "items": [
+          "Only Conclusion I follows.",
+          "Only Conclusion II follows.",
+          "Both Conclusion I and Conclusion II follow.",
+          "Neither Conclusion I nor Conclusion II follows."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "Multiple-conclusion questions become manageable when each conclusion is tested separately against the original statements. Do not let one proposed conclusion influence your judgment of the other.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L08-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "Test Conclusion I and Conclusion II independently.",
+          "Return to the original statements before testing each conclusion.",
+          "One conclusion may follow while the other does not.",
+          "Both may follow or neither may follow.",
+          "Use exactly the same logical rules learned in earlier lessons."
+        ]
+      }
+    ]
+  }
+]

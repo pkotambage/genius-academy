@@ -1,0 +1,149 @@
+[
+  {
+    "id": "GIQ-LR-01-T01-L07",
+    "branchId": "genius_iq",
+    "programmeId": "GIQ-LR",
+    "subjectId": "GIQ-LR-01",
+    "topicId": "GIQ-LR-01-T01",
+    "title": "Reversals and Hidden Assumptions",
+    "summary": "Learn to spot invalid reversals, hidden assumptions and other common reasoning traps in Statements and Conclusions questions.",
+    "difficulty": "Foundation",
+    "estimatedMinutes": 11,
+    "sortOrder": 7,
+    "isPremium": false,
+    "isActive": true,
+    "thumbnailAsset": null,
+    "videoUrl": null,
+    "questionSetId": "GIQ-LR-01-T01-L07-QUIZ",
+    "learningObjectives": [
+      "Recognize when a statement has been reversed incorrectly",
+      "Distinguish valid conversions from invalid reversals",
+      "Identify hidden assumptions in proposed conclusions",
+      "Avoid conclusions that add unstated information"
+    ],
+    "contentBlocks": [
+      {
+        "id": "GIQ-LR-01-T01-L07-B01",
+        "type": "heading",
+        "title": "A common reasoning trap",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 1
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B02",
+        "type": "paragraph",
+        "title": "",
+        "content": "Many incorrect conclusions look convincing because they reverse the direction of a statement or quietly add information that was never given. Strong logical reasoning requires you to notice these hidden changes.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 2
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B03",
+        "type": "example",
+        "title": "Invalid reversal",
+        "content": "Statement: All engineers are graduates. Conclusion: All graduates are engineers. This does not follow. The original statement places engineers inside the graduate group, but the graduate group may contain many other people.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 3
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B04",
+        "type": "keyPoint",
+        "title": "What can be safely reversed?",
+        "content": "'Some A are B' can be read as 'Some B are A' because the same shared members belong to both groups. 'No A are B' can be read as 'No B are A' because the groups do not overlap. But 'All A are B' cannot normally be reversed.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 4
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B05",
+        "type": "heading",
+        "title": "Hidden assumptions",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 5
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B06",
+        "type": "example",
+        "title": "Adding an unstated fact",
+        "content": "Statement: Some employees received bonuses. Conclusion: The highest-performing employees received bonuses. The conclusion adds a performance condition that the statement never mentions.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 6
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B07",
+        "type": "warning",
+        "title": "Do not assume 'only'",
+        "content": "Statement: All doctors in this clinic wear white coats. This does not mean that only doctors wear white coats. Nurses, technicians or other people may also wear them.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 7
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B08",
+        "type": "warning",
+        "title": "Do not add causes or reasons",
+        "content": "A statement may tell you that two facts are connected without explaining why. Do not invent a cause, motive or reason unless the statement actually provides one.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 8
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B09",
+        "type": "numberedList",
+        "title": "Trap-check method",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 9,
+        "items": [
+          "Compare the direction of the conclusion with the original statement.",
+          "Check whether the conclusion adds words such as only, always, best, first or most.",
+          "Look for new causes, reasons or conditions.",
+          "Check whether personal knowledge has been added.",
+          "Accept only what the statements themselves guarantee."
+        ]
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B10",
+        "type": "knowledgeCheck",
+        "title": "Check your understanding",
+        "content": "Statement: Some lawyers are lecturers. Conclusion: Some lecturers are lawyers. This follows because the same people who are both lawyers and lecturers can be described from either direction.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 10
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B11",
+        "type": "summary",
+        "title": "Lesson summary",
+        "content": "Invalid conclusions often reverse an all statement or introduce information that was never given. Some and no statements can be converted safely, but all statements generally cannot.",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 11
+      },
+      {
+        "id": "GIQ-LR-01-T01-L07-B12",
+        "type": "keyTakeaways",
+        "title": "Key takeaways",
+        "content": "",
+        "mediaUrl": null,
+        "caption": null,
+        "sortOrder": 12,
+        "items": [
+          "All A are B does not mean all B are A.",
+          "Some A are B means some B are A.",
+          "No A are B means no B are A.",
+          "Never add 'only' unless the statement provides it.",
+          "Never add causes, motives or facts that are not stated."
+        ]
+      }
+    ]
+  }
+]

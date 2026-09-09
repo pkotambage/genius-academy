@@ -1,6 +1,11 @@
 {
   "assessmentVersion": "1.0.0",
   "questionModules": [
-    "assets/data/assessment/questions/logical_reasoning/statements_conclusions.json"
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions.json",
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions_lesson_05.json",
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions_lesson_06.json",
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions_lesson_07.json",
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions_lesson_08.json",
+    "assets/data/assessment/questions/logical_reasoning/statements_conclusions_lesson_09.json"
   ]
 }
